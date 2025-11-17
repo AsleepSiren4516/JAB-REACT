@@ -3818,7 +3818,7 @@ input[type=button].btn-block {
     padding-left: 0;
   }
 }
-@media (min-width: 768px) {
+@media (: 768px) {
   .navbar-expand-md {
     flex-flow: row nowrap;
     justify-content: flex-start;
@@ -9038,10 +9038,17 @@ h6,
     background: #0DA7E0;
   }
 }
+
+@media (min-width: 992px) {
+  .navbar-dark .navbar-nav .nav-link {
+    font-size: 2rem;
+  }
+}
+
 .navbar-dark .navbar-nav .nav-link {
   padding-left: 15px;
   padding-right: 15px;
-  font-weight: bold;
+  font-weight: 900;
   letter-spacing: 1px;
   color: #FFFBF2;
 }
