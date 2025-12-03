@@ -39,6 +39,34 @@
     color: #FFD447;
 }
 
+
+.navbar .nav-link {
+  position: relative; /* esto es clave */
+  display: inline-block;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  color: white;
+  transition: color 0.3s;
+}
+
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px; /* grosor de la línea */
+  background-color: #fff; /* color de la línea */
+  transition: width 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar .nav-link:hover::after {
+  width: 100%;
+}
+
+
 .navbar-2{
     background-color: rgba(13, 167, 224, 0.3);
     transition: background-color 0.3s ease;
