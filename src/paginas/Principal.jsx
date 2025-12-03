@@ -9,7 +9,7 @@ export default function Principal() {
       <Carrusel />
 
       <div className="container text-center mt-5">
-        <h1>Bienvenido a JAB</h1>
+        <h1>Bienvenido a JAB</h1>l
         <p>Construyendo tu nueva página en React.</p>
       </div>
 
