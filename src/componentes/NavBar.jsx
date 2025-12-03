@@ -20,10 +20,10 @@ export default function NavBar() {
 
       <div className="collapse navbar-collapse" id="navMenu">
         <ul className="navbar-nav ms-auto">
-          <li className="nav-item"><Link className="nav-link text-white" to="/">Inicio</Link></li>
-          <li className="nav-item"><Link className="nav-link text-white" to="/sobre">Sobre nosotros</Link></li>
-          <li className="nav-item"><Link className="nav-link text-white" to="/servicios">Servicios</Link></li>
-          <li className="nav-item"><Link className="nav-link text-white" to="/contacto">Contactanos</Link></li>
+          <li className="nav-item"><Link className="nav-link" to="/">Inicio</Link></li>
+          <li className="nav-item"><Link className="nav-link" to="/sobre">Sobre nosotros</Link></li>
+          <li className="nav-item"><Link className="nav-link" to="/servicios">Servicios</Link></li>
+          <li className="nav-item"><Link className="nav-link" to="/contacto">Contactanos</Link></li>
         </ul>
       </div>
     </nav>

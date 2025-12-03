@@ -1,9 +1,24 @@
+/*Menu colores*/
+:root {
+  --azul: #0DA7E0;
+  --amarillo: #FFD447;
+  --blanco: #ffffff;
+  --negro: #000000;
+  --transAzul: rgba(13, 167, 224, 0.7);
+  --transAzulFuerte: rgba(13, 167, 224, 0.8);
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+/*Importaciones*/
+
+/*Configuracion barra de navegacion*/
 .navbar{
     width: 100%;
     height: 70px;
     top: 0;
     left: 0;
-    background-color: rgba(13, 167, 224, 0.4);
+    background-color: var(--transAzul);
     display: flex;
     align-items: center;
     transition: background-color 0.3s ease;
@@ -11,9 +26,10 @@
 }
 
 .navbar:hover {
-    background-color: rgba(13, 167, 224, 0.5);
+    background-color: var(--transAzulFuerte);
 }
 
+/*Configuracion del logo*/
 .navbar .navbar-brand{
     display: flex;
     align-items: center;
@@ -27,51 +43,20 @@
     display: block;
 }
 
+/*Configuracion del menu Letras*/
+.navbar-nav {
+    display: flex;
+    gap: 30px;
+}
 .navbar .nav-link{
     font-weight: 700;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-    color:white;
+    font-size: 1.2rem;
+    letter-spacing: .5px;
+    color:var(--blanco);
     transition: color 0.3s;
 }
 
 .navbar .nav-link:hover {
-    color: #FFD447;
+    color: var(--amarillo);
 }
 
-
-.navbar .nav-link {
-  position: relative; /* esto es clave */
-  display: inline-block;
-  font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: 1px;
-  color: white;
-  transition: color 0.3s;
-}
-
-.navbar .nav-link::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: 0;
-  height: 2px; /* grosor de la línea */
-  background-color: #fff; /* color de la línea */
-  transition: width 0.3s ease;
-  transform: translateX(-50%);
-}
-
-.navbar .nav-link:hover::after {
-  width: 100%;
-}
-
-
-.navbar-2{
-    background-color: rgba(13, 167, 224, 0.3);
-    transition: background-color 0.3s ease;
-}
-
-.navbar-2:hover {
-    background-color: rgba(13, 167, 224, 0.5);
-}
