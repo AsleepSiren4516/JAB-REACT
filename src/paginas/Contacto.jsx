@@ -1,11 +1,11 @@
-import NavBar from "../componentes/NavBar";
+import NavBar2 from "../componentes/Navbar2";
 import PiePagina from "../componentes/PiePagina";
 import Donacion from "../componentes/Donacion";
 
 export default function Contacto() {
   return (
     <>
-      <NavBar />
+      <NavBar2 />
 
       <div className="container mt-5">
 

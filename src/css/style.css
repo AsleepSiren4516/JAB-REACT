@@ -38,3 +38,12 @@
 .navbar .nav-link:hover {
     color: #FFD447;
 }
+
+.navbar-2{
+    background-color: rgba(13, 167, 224, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+.navbar-2:hover {
+    background-color: rgba(13, 167, 224, 0.5);
+}

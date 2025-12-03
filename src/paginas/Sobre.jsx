@@ -1,10 +1,10 @@
-import NavBar from "../componentes/NavBar";
+import NavBar2 from "../componentes/Navbar2";
 import PiePagina from "../componentes/PiePagina";
 
 export default function Sobre() {
   return (
     <>
-      <NavBar />
+      <NavBar2 />
 
       <div className="container mt-5">
         <h1>Sobre nosotros</h1>
