@@ -1,5 +1,6 @@
 import Slide1 from "../assets/carrusel1.jpg";
 import Slide2 from "../assets/carrusel2.jpg";
+import Logo from "../assets/JAB_Logo.svg";
 
 export default function Carrusel() {
   return (
@@ -13,10 +14,28 @@ export default function Carrusel() {
       {/* Slides */}
       <div className="carousel-inner">
         <div className="carousel-item active">
-          <img src={Slide1} className="d-block w-100" alt="Slide 1" />
+          <div className="carousel-slide">
+            <img src={Slide1} className="d-block w-100" alt="Slide 1" />
+
+            <div className="overlay"></div>
+
+            <div className="carousel-content">
+              {/*<h2>Titulo 1</h2>*/}
+              {/*<p>Subtitulo 1</p>*/}
+              <img src={Logo} className="logo"></img>
+            </div>
+          </div>
         </div>
+
         <div className="carousel-item">
-          <img src={Slide2} className="d-block w-100" alt="Slide 2" />
+          <div className="carousel-slide">
+            <img src={Slide2} className="d-block w-100" alt="Slide 2" />
+            <div className="overlay"></div>
+            <div className="carousel-content">
+              <h2>Cambiando vidas</h2>
+              <p>Desde 2018</p>
+            </div>
+          </div>
         </div>
       </div>
 

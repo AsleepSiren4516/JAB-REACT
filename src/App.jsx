@@ -3,6 +3,7 @@ import Principal from './paginas/Principal'
 import Servicios from './paginas/Servicios'
 import Sobre from './paginas/Sobre'
 import Contacto from './paginas/Contacto'
+import "./css/style.css";
 
 
 function App() {

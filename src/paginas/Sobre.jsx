@@ -1,4 +1,4 @@
-import NavBar2 from "../componentes/Navbar2";
+import NavBar2 from "../componentes/NavBar";
 import PiePagina from "../componentes/PiePagina";
 
 export default function Sobre() {

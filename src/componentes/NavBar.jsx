@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import Logo from "../assets/JAB_Logo.svg"
+import Logo2 from "../assets/JAB_Logo_Negativo.svg"
 import "../css/style.css"
 
 export default function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg position-absolute w-100 p-3" style={{ zIndex: 10 }}>
       <Link className="navbar-brand" to="/">
-        <img src={Logo} alt="JAB Logo" className="logo" />
+        <img src={Logo2} alt="JAB Logo" className="logo-negative"/>
       </Link>
 
       <button

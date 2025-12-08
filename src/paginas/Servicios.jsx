@@ -1,4 +1,4 @@
-import NavBar2 from "../componentes/Navbar2";
+import NavBar2 from "../componentes/NavBar";
 import PiePagina from "../componentes/PiePagina";
 
 import Service1 from "../assets/service-1.jpg";
