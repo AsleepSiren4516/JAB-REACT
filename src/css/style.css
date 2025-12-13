@@ -1,13 +1,14 @@
 /*Menu colores*/
 :root {
+  --azulFuerte: #0d9bce;
   --azul: #0DA7E0;
   --amarillo: #FFD447;
   --blanco: #ffffff;
   --negro: hsl(0, 0%, 0%);
   --fondo: #FFFBF3;
   --footerAzul: rgba(13, 167, 224, 0.8);
-  --transAzul: rgba(13, 167, 224, 0.4);
-  --transAzulFuerte: rgba(13, 167, 224, 0.6);
+  --transAzul: rgba(11, 80, 105, 0.477);
+  --transAzulFuerte: rgba(25, 119, 153, 0.6);
 }
 
 
@@ -25,16 +26,13 @@ html, body, #root{
     height: 70px;
     top: 0;
     left: 0;
-    background-color: var(--transAzul);
+    background-color: var(--azul);
     display: flex;
     align-items: center;
     transition: background-color 0.3s ease;
     padding: 0 1rem;
 }
 
-.navbar:hover {
-    background-color: var(--transAzulFuerte);
-}
 
 /*Configuracion del logo*/
 .navbar .navbar-brand{
@@ -54,25 +52,60 @@ html, body, #root{
 
 /*Configuracion del menu Letras*/
 .navbar-nav {
-    display: flex;
-    gap: 30px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 .navbar .nav-link{
-    font-weight: 700;
-    font-size: 1.2rem;
-    letter-spacing: .5px;
-    color:var(--blanco);
-    transition: color 0.3s;
+  margin-left: 10px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: .5px;
+  color:var(--blanco);
+  transition: color 0.3s;
+}
+.middle-right {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  gap: 80px;
 }
 
 .navbar .nav-link:hover {
     color: var(--amarillo);
 }
 
+/*Configuracion boton Donar*/
+.nav-donar {
+  padding: 10px 20px;
+  background-color: var(--azul);
+  border-color: var(--blanco);
+  color: var(--blanco);
+  border-radius: 5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.nav-donar:hover{
+  color: var(--negro);
+  background-color: var(--amarillo);
+}
+
 /*Configuracion de carrusel*/
 .carousel-slide {
   position: relative;
 }
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 60px !important;      
+  height: 60px !important;
+  background-size: 100% 100% !important; 
+  filter: brightness(0) saturate(100%) invert(97%) sepia(69%) saturate(4629%) hue-rotate(319deg) brightness(105%) contrast(101%);
+}
+
+
 
 .overlay {
   position: absolute;
@@ -82,7 +115,6 @@ html, body, #root{
   height: 100%;
   background-color: var(--transAzul);
   z-index: 1;
-  border-bottom: 3px solid var(--amarillo);
 }
 
 .carousel-content {
@@ -116,16 +148,13 @@ html, body, #root{
 .footer{
   background-image: url(../assets/jab_patron2.1.svg);
   background-size: cover;
-}
-
-.footer{
   width: 100%;
   background-color: var(--footerAzul);
   color: var(--blanco);
   text-align: center;
-  padding: 12px 0;
   font-family: "Poppins", sans-serif;
   font-size: 0.9rem;
+  padding-top: 2%;
   margin-top: 2%;
   border-top: 3px solid var(--amarillo);
 }
@@ -134,7 +163,8 @@ html, body, #root{
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
   gap: 50%;
   padding: 0 1%;
 }
@@ -144,7 +174,7 @@ html, body, #root{
 }
 
 .footer-col h4 {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   margin-bottom: 10px;
   font-weight: 600;
   color: var(--blanco);
@@ -165,12 +195,10 @@ html, body, #root{
 
 /* Línea inferior del footer */
 .footer-copy {
-  margin-top: 15px;
   width: 100%;
-  height: 35px;
   text-align: center;
   font-size: 0.85rem;
-  opacity: 0.9;
+  padding: 10px 0;
   background-color: var(--azul);
 }
 
@@ -178,14 +206,15 @@ html, body, #root{
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: var(--azul);
+  background-color: var(--azulFuerte);
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 8px;
+  margin: 0 5px;
   font-size: 1.7rem;
   transition: 0.3s;
+  gap: 10px;
 }
 
 .icono-social:hover {

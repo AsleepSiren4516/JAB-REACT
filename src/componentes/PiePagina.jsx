@@ -6,7 +6,7 @@ export default function PiePagina() {
       <div className="footer-contenido">
 
         <div className="footer-col">
-          <h4>Siguenos</h4>
+          <h4>Síguenos</h4>
           <div className="d-flex justify-content-center">
             <a className="icono-social" href="https://www.facebook.com/fundacionJAB/" target="_blank">
               <FaFacebookF />

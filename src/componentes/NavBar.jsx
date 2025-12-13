@@ -18,13 +18,16 @@ export default function NavBar() {
         <span className="navbar-toggler-icon"></span>
       </button>
 
-      <div className="collapse navbar-collapse" id="navMenu">
+      <div className="collapse navbar-collapse middle-right" id="navMenu">
         <ul className="navbar-nav ms-auto">
           <li className="nav-item"><Link className="nav-link" to="/">Inicio</Link></li>
           <li className="nav-item"><Link className="nav-link" to="/sobre">Sobre nosotros</Link></li>
           <li className="nav-item"><Link className="nav-link" to="/servicios">Servicios</Link></li>
           <li className="nav-item"><Link className="nav-link" to="/contacto">Contactanos</Link></li>
         </ul>
+
+        <button className="nav-donar">Donar</button>
+
       </div>
     </nav>
   );
