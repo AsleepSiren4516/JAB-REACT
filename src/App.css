@@ -1,5 +1,8 @@
 html, body{
+  background-color: #E9E8E8 !important;
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 #root {
@@ -11,4 +14,19 @@ html, body{
 
 footer.footer{
   margin-top: auto;
+}
+
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700; /* Bold para títulos grandes */
+}
+
+h4, h5 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600; /* Semi-Bold para subtítulos */
+}
+
+p, p {
+  font-family: 'Inter', sans-serif; /* texto largo más legible */
+  font-weight: 400;
 }

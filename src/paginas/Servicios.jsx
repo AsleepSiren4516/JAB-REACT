@@ -1,36 +1,49 @@
-import NavBar2 from "../componentes/NavBar";
-import PiePagina from "../componentes/PiePagina";
+import React from "react";
+import "../css/style.css";
 
-import Service1 from "../assets/service-1.jpg";
-import Service2 from "../assets/service-2.jpg";
-import Service3 from "../assets/service-3.jpg";
-import Service4 from "../assets/service-4.jpg";
+// Importa las imágenes de tus servicios
+import Servicio1 from "../assets/service-1.jpg";
+import Servicio2 from "../assets/service-2.jpg";
+import Servicio3 from "../assets/service-3.jpg";
+import Servicio4 from "../assets/service-4.jpg";
 
 export default function Servicios() {
+  const servicios = [
+    {
+      id: 1,
+      img: Servicio1,
+      titulo: "Servicio 1",
+      descripcion: "Descripción breve del servicio 1.",
+    },
+    {
+      id: 2,
+      img: Servicio2,
+      titulo: "Servicio 2",
+      descripcion: "Descripción breve del servicio 2.",
+    },
+    {
+      id: 3,
+      img: Servicio3,
+      titulo: "Servicio 3",
+      descripcion: "Descripción breve del servicio 3.",
+    },
+    {
+      id: 4,
+      img: Servicio4,
+      titulo: "Servicio 4",
+      descripcion: "Descripción breve del servicio 4.",
+    },
+  ];
+
   return (
-    <>
-      <NavBar2 />
-
-      <div className="container mt-4">
-        <h1 className="mb-4">Nuestros Servicios</h1>
-
-        <div className="row">
-          {[Service1, Service2, Service3, Service4].map((img, i) => (
-            <div className="col-md-6 mb-4" key={i}>
-              <div className="card shadow-sm">
-                <img src={img} className="card-img-top" alt="" />
-                <div className="card-body">
-                  <h5 className="card-title">Servicio {i + 1}</h5>
-                  <p className="card-text">Descripción del servicio…</p>
-                </div>
-              </div>
-            </div>
-          ))}
+    <div className="servicios-container">
+      {servicios.map((servicio) => (
+        <div key={servicio.id} className="servicio-card">
+          <img src={servicio.img} alt={servicio.titulo} className="servicio-img" />
+          <h3 className="servicio-titulo">{servicio.titulo}</h3>
+          <p className="servicio-texto">{servicio.descripcion}</p>
         </div>
-      </div>
-
-      <PiePagina />
-    </>
+      ))}
+    </div>
   );
 }
-

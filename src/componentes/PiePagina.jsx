@@ -21,9 +21,7 @@ export default function PiePagina() {
         </div>
       </div>
 
-      <div className="footer-copy">
-        © 2026 JAB. Todos los derechos reservados.
-      </div>
+      <div className="footer-copy">© 2026 JAB. Todos los derechos reservados. | Pagina y diseños desarrollados por <a className="autores" href="">Loana</a></div>
     </footer>
   );
 }

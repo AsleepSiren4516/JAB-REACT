@@ -1,78 +1,60 @@
-import React from "react";
-import Service1 from "../assets/service-1.jpg";
-import Service2 from "../assets/service-2.jpg";
-import Service3 from "../assets/service-3.jpg";
-import Service4 from "../assets/service-4.jpg";
+import "../css/style.css";
+
+// Importa las imágenes de tus servicios
+import Servicio1 from "../assets/service-1.jpg";
+import Servicio2 from "../assets/service-2.jpg";
+import Servicio3 from "../assets/service-3.jpg";
+import Servicio4 from "../assets/service-4.jpg";
 
 export default function ServiciosBloque() {
+  const servicios = [
+    {
+      id: 1,
+      img: Servicio1,
+      titulo: "Acompañamiento",
+      descripcion:
+        "Ofrecemos apoyo y acompañamiento personalizado, promoviendo la inclusión en distintos ámbitos de la vida diaria.",
+    },
+    {
+      id: 2,
+      img: Servicio2,
+      titulo: "Capacitación",
+      descripcion:
+        "Realizamos talleres para capacitar a maestros y familias, fortaleciendo el cuidado y bienestar de los niños.",
+    },
+    {
+      id: 3,
+      img: Servicio3,
+      titulo: "Inclusión",
+      descripcion:
+        "Identificamos talentos y fomentamos su participación en el ámbito laboral, cultural y deportivo, impulsando su desarrollo integral.",
+    },
+    {
+      id: 4,
+      img: Servicio4,
+      titulo: "Concientización",
+      descripcion:
+        "Promovemos la sensibilización sobre diversas condiciones y cómo abordarlas de manera adecuada.",
+    },
+  ];
+
   return (
-    <div className="container-fluid pt-5">
-      <div className="container">
-        <div className="section-title">
-          <h4 className="text-primary text-uppercase" style={{ letterSpacing: "5px" }}>
-            Nuestros ServiciosBloque
-          </h4>
-          <h1 className="display-4">Fresh & Organic Beans</h1>
+    <div className="servicios-container">
+      {servicios.map((servicio) => (
+        <div key={servicio.id} className="servicio-card">
+          <img
+            src={servicio.img}
+            alt={servicio.titulo}
+            className="servicio-img"
+          />
+
+          {/* CONTENEDOR QUE SE MUEVE */}
+          <div className="servicio-info">
+            <h3 className="servicio-titulo">{servicio.titulo}</h3>
+            <p className="servicio-texto">{servicio.descripcion}</p>
+          </div>
         </div>
-        <div className="row">
-          <div className="col-lg-6 mb-5">
-            <div className="row align-items-center">
-              <div className="col-sm-5">
-                <img className="img-fluid mb-3 mb-sm-0" src={Service1} alt="" />
-              </div>
-              <div className="col-sm-7">
-                <h4><i className="fa fa-truck service-icon"></i>Fastest Door Delivery</h4>
-                <p className="m-0">
-                  Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima erat tempor
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-lg-6 mb-5">
-            <div className="row align-items-center">
-              <div className="col-sm-5">
-                <img className="img-fluid mb-3 mb-sm-0" src={Service2} alt="" />
-              </div>
-              <div className="col-sm-7">
-                <h4><i className="fa fa-coffee service-icon"></i>Fresh Coffee Beans</h4>
-                <p className="m-0">
-                  Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima erat tempor
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-lg-6 mb-5">
-            <div className="row align-items-center">
-              <div className="col-sm-5">
-                <img className="img-fluid mb-3 mb-sm-0" src={Service3} alt="" />
-              </div>
-              <div className="col-sm-7">
-                <h4><i className="fa fa-award service-icon"></i>Best Quality Coffee</h4>
-                <p className="m-0">
-                  Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima erat tempor
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-lg-6 mb-5">
-            <div className="row align-items-center">
-              <div className="col-sm-5">
-                <img className="img-fluid mb-3 mb-sm-0" src={Service4} alt="" />
-              </div>
-              <div className="col-sm-7">
-                <h4><i className="fa fa-table service-icon"></i>Online Table Booking</h4>
-                <p className="m-0">
-                  Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima erat tempor
-                </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
+      ))}
     </div>
   );
 }

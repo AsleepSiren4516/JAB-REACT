@@ -1,8 +1,13 @@
 /*Menu colores*/
 :root {
+  --azul-muy-oscuro: #123448;
   --azulFuerte: #0d9bce;
+  --azul-texto: #076A99;    
+  --amarillo-texto: #A38600; 
+  --rojo-texto: #A00020;     
   --azul: #0DA7E0;
   --amarillo: #FFD447;
+  --rojo: #EA0029;
   --blanco: #ffffff;
   --negro: hsl(0, 0%, 0%);
   --fondo: #FFFBF3;
@@ -21,18 +26,21 @@ html, body, #root{
 }
 
 /*Configuracion barra de navegacion*/
-.navbar{
-    width: 100%;
-    height: 70px;
-    top: 0;
-    left: 0;
-    background-color: var(--azul);
-    display: flex;
-    align-items: center;
-    transition: background-color 0.3s ease;
-    padding: 0 1rem;
+.nav-sticky {
+  position: sticky;
+  top: 0;
+  background: red;
 }
 
+.navbar {
+  width: 100%;
+  height: 70px;
+  background-color: var(--azul);
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  position: relative; /* posición normal inicial */
+}
 
 /*Configuracion del logo*/
 .navbar .navbar-brand{
@@ -49,7 +57,6 @@ html, body, #root{
     margin-left: 30%;
 }
 
-
 /*Configuracion del menu Letras*/
 .navbar-nav {
   flex: 1;
@@ -59,7 +66,7 @@ html, body, #root{
 .navbar .nav-link{
   margin-left: 10px;
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   letter-spacing: .5px;
   color:var(--blanco);
   transition: color 0.3s;
@@ -72,8 +79,9 @@ html, body, #root{
   gap: 80px;
 }
 
-.navbar .nav-link:hover {
-    color: var(--amarillo);
+.nav-link.active, .nav-link:hover {
+    color: var(--amarillo) !important; 
+   border-bottom: 3px solid var(--amarillo);
 }
 
 /*Configuracion boton Donar*/
@@ -85,17 +93,19 @@ html, body, #root{
   border-radius: 5px;
   font-weight: 700;
   cursor: pointer;
+  letter-spacing: .5px;
 }
 
 .nav-donar:hover{
-  color: var(--negro);
-  background-color: var(--amarillo);
+  color: var(--azul);
+  background-color: var(--blanco);
 }
 
 /*Configuracion de carrusel*/
-.carousel-slide {
-  position: relative;
+.carousel-item {
+  transition: transform 50s ease; /* deslizamiento más lento */
 }
+
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
@@ -104,8 +114,6 @@ html, body, #root{
   background-size: 100% 100% !important; 
   filter: brightness(0) saturate(100%) invert(97%) sepia(69%) saturate(4629%) hue-rotate(319deg) brightness(105%) contrast(101%);
 }
-
-
 
 .overlay {
   position: absolute;
@@ -156,7 +164,7 @@ html, body, #root{
   font-size: 0.9rem;
   padding-top: 2%;
   margin-top: 2%;
-  border-top: 3px solid var(--amarillo);
+
 }
 
 .footer-contenido {
@@ -206,6 +214,7 @@ html, body, #root{
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  border: 1px solid var(--blanco);
   background-color: var(--azulFuerte);
   color: white;
   display: flex;
@@ -218,8 +227,148 @@ html, body, #root{
 }
 
 .icono-social:hover {
+  border: 1px solid var(--azulFuerte);
   background-color: var(--amarillo);
-  color: black;
+  color: var(--azul-texto);
+}
+
+/*Autores*/
+.autores{
+  color: var(--blanco);
+  text-decoration: none;
+  font-size: 1.0rem;
+  font-weight: 700;
+}
+
+.autores:hover{
+  color: var(--amarillo);
+  transition: 0.3s;
+}
+
+/* Configuracion apartado sobre nosotros */
+.about-section {
+  background-color: var(--transAzul);
+}
+
+.col-lg-6 {
+  position: relative;
+}
+
+.about-logo{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width: 100px;
+}
+
+.about-image {
+  max-width: 85%;
+  max-height: 370px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.about-image:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+}
+
+.about-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 2.3rem;
+  color: var(--azul-texto);
+  margin-bottom: 0.5rem;
+}
+
+.about-subtitle {
+  font-family: 'Alef', sans-serif;
+  font-weight: 500;
+  font-size: 1.3rem;
+  color: var(--rojo-texto);
+  margin-bottom: 1.5rem;
+}
+
+.about-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  text-align: justify;
+  color: var(--azul-muy-oscuro);
+}
+
+/* Configuracion de servicios */
+.servicios-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; 
+  gap: 20px; 
+  padding: 50px 10%;
+}
+
+.servicio-card {
+  background-color: var(--blanco);
+  border-radius: 10px;
+  overflow: hidden;
+  width: calc(25% - 15px);
+  height: 310px; 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s;
+  position: relative;
+  cursor: pointer;
+}
+
+.servicio-card:hover {
+  transform: translateY(-5px);
+}
+
+.servicio-img {
+  width: 100%;
+  height: 250px; 
+  object-fit: cover;
+}
+
+.servicio-titulo {
+  font-size: 1.2rem;
+  margin: 15px 0 2px 0;
+  color: var(--amarillo-texto);
+}
+
+.servicio-texto {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.95);
+  padding: 10px;
+  font-size: 1rem;
+  color: var(--azul-muy-oscuro);
+
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.servicio-card:hover .servicio-texto {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsivo: en pantallas medianas y pequeñas */
+@media (max-width: 992px) {
+  .servicio-card {
+    width: calc(50% - 10px); /* 2 tarjetas por fila */
+  }
+}
+
+@media (max-width: 576px) {
+  .servicio-card {
+    width: 100%; /* 1 tarjeta por fila en móviles */
+  }
 }
 
 /* Responsive (pantallas pequeñas) */

@@ -16,8 +16,6 @@ export default function Contacto() {
         <h2 className="mt-5">Haz una Donación</h2>
         <Donacion />
       </div>
-
-      <PiePagina />
     </>
   );
 }

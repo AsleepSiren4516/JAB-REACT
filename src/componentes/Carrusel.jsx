@@ -1,48 +1,41 @@
+import Carousel from 'react-bootstrap/Carousel';
 import Slide1 from "../assets/carrusel1.jpg";
 import Slide2 from "../assets/carrusel2.jpg";
 import Logo from "../assets/JAB_Logo.svg";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Carrusel() {
   return (
-    <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
-
-      <div className="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      </div>
-
-      <div className="carousel-inner">
-        <div className="carousel-item active">
-          <div className="carousel-slide">
-            <img src={Slide1} className="d-block w-100" alt="Slide 1" />
-
-            <div className="overlay"></div>
-
-            <div className="carousel-content">
-              <img src={Logo} className="logo"></img>
-            </div>
-          </div>
+    <Carousel
+      pause={false}      // No se detiene al hover
+      interval={5000}    // Tiempo entre slides (ms)
+      controls={true}    // Muestra los botones prev/next
+      indicators={true}  // Muestra los indicadores
+      wrap={true}        // Repite el carrusel en bucle
+    >
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src={Slide1}
+          alt="Slide 1"
+        />
+        <div className="overlay"></div>
+        <div className="carousel-content">
+          <img src={Logo} className="logo" alt="Logo" />
         </div>
+      </Carousel.Item>
 
-        <div className="carousel-item">
-          <div className="carousel-slide">
-            <img src={Slide2} className="d-block w-100" alt="Slide 2" />
-            <div className="overlay"></div>
-            <div className="carousel-content">
-              <img src={Logo} className="logo"></img>
-            </div>
-          </div>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src={Slide2}
+          alt="Slide 2"
+        />
+        <div className="overlay"></div>
+        <div className="carousel-content">
+          <img src={Logo} className="logo" alt="Logo" />
         </div>
-      </div>
-
-      <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Anterior</span>
-      </button>
-      <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Siguiente</span>
-      </button>
-    </div>
+      </Carousel.Item>
+    </Carousel>
   );
 }
