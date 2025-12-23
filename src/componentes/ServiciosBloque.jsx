@@ -1,6 +1,4 @@
 import "../css/style.css";
-
-// Importa las imágenes de tus servicios
 import Servicio1 from "../assets/service-1.jpg";
 import Servicio2 from "../assets/service-2.jpg";
 import Servicio3 from "../assets/service-3.jpg";
@@ -47,8 +45,6 @@ export default function ServiciosBloque() {
             alt={servicio.titulo}
             className="servicio-img"
           />
-
-          {/* CONTENEDOR QUE SE MUEVE */}
           <div className="servicio-info">
             <h3 className="servicio-titulo">{servicio.titulo}</h3>
             <p className="servicio-texto">{servicio.descripcion}</p>

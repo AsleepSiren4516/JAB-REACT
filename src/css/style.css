@@ -9,6 +9,7 @@
   --amarillo: #FFD447;
   --rojo: #EA0029;
   --blanco: #ffffff;
+  --transSombra: rgba(0, 0, 0, 0.25);
   --negro: hsl(0, 0%, 0%);
   --fondo: #FFFBF3;
   --footerAzul: rgba(13, 167, 224, 0.8);
@@ -61,17 +62,17 @@ html, body, #root{
 
 /*Configuracion del logo*/
 .navbar .navbar-brand{
-    display: flex;
-    align-items: center;
-    height: 100%;
-    padding: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0;
 }
 
 .navbar .logo-negative {
-    height: 100%;
-    width: auto;
-    display: block;
-    margin-left: 30%;
+  height: 100%;
+  width: auto;
+  display: block;
+  margin-left: 30%;
 }
 
 /*Configuracion del menu Letras*/
@@ -108,8 +109,8 @@ html, body, #root{
 }
 
 .nav-link.active, .nav-link:hover {
-    color: var(--amarillo) !important; 
-   border-bottom: 3px solid var(--amarillo);
+  color: var(--amarillo) !important; 
+  border-bottom: 3px solid var(--amarillo);
 }
 
 .txt-nav{
@@ -162,7 +163,6 @@ html, body, #root{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
   text-align: center;
   z-index: 2;
 }
@@ -248,7 +248,7 @@ html, body, #root{
   border-radius: 50%;
   border: 1px solid var(--blanco);
   background-color: var(--azulFuerte);
-  color: white;
+  color: var(--blanco);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -289,7 +289,7 @@ html, body, #root{
 .about-logo{
   position: absolute;
   top: 0;
-  left: 40%;
+  left: 200px;
   width: 100px;
 }
 
@@ -298,7 +298,7 @@ html, body, #root{
   max-height: 370px;
   object-fit: cover;
   border-radius: 16px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 15px 35px var(--transSombra);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
 }
@@ -347,11 +347,33 @@ html, body, #root{
   overflow: hidden;
   width: calc(25% - 15px);
   height: 310px; 
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px var(--transSombra);
   text-align: center;
   transition: transform 0.3s;
   position: relative;
   cursor: pointer;
+}
+
+.servicio-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 250px;
+  background: linear-gradient(
+    to top,
+    var(--transAzulFuerte),
+    var(--transAzul)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.servicio-card:hover::after {
+  opacity: 1;
 }
 
 .servicio-card:hover {
@@ -359,6 +381,8 @@ html, body, #root{
 }
 
 .servicio-img {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 250px; 
   object-fit: cover;
@@ -375,7 +399,7 @@ html, body, #root{
   bottom: 0;
   left: 0;
   width: 100%;
-  background: rgba(255,255,255,0.95);
+  background: var(--blanco);
   padding: 10px;
   font-size: 1rem;
   color: var(--azul-muy-oscuro);
@@ -383,6 +407,7 @@ html, body, #root{
   opacity: 0;
   transform: translateY(100%);
   transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 3;
 }
 
 .servicio-card:hover .servicio-texto {
