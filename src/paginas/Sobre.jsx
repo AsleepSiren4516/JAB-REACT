@@ -4,8 +4,7 @@ import PiePagina from "../componentes/PiePagina";
 export default function Sobre() {
   return (
     <>
-      <NavBar2 />
-
+     
       <div className="container mt-5">
         <h1>Sobre nosotros</h1>
         <p>Contenido sobre la organización…</p>
@@ -213,7 +212,7 @@ export default function Sobre() {
         </div>
       </div>
       
-      <PiePagina />
+      
     </>
   );
 }

@@ -47,7 +47,7 @@ export default function Principal() {
 
       <img src={Separador} alt="Separador" className="separador" />
       <ServiciosBloque />
-      <PiePagina />
+      
     </>
   );
 }

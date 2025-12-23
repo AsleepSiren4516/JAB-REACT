@@ -27,9 +27,23 @@ html, body, #root{
 
 /*Configuracion barra de navegacion*/
 .nav-sticky {
-  position: sticky;
+  position: sticky !important;
   top: 0;
-  background: red;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  
+}
+
+.nav-sticky.sticky:hover{
+  background-color: var(--azul);
+  box-shadow: none;
+}
+
+.nav-sticky.sticky {
+  background-color: var(--footerAzul);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  height: 55px;           /* reduce altura */
+  padding: 0 0.8rem; 
 }
 
 .navbar {
@@ -38,8 +52,11 @@ html, body, #root{
   background-color: var(--azul);
   display: flex;
   align-items: center;
+  align-content:space-between;
   padding: 0 1rem;
   position: relative; /* posición normal inicial */
+  transition: all 0.3s ease;
+  left: 50px;
 }
 
 /*Configuracion del logo*/
@@ -71,6 +88,17 @@ html, body, #root{
   color:var(--blanco);
   transition: color 0.3s;
 }
+
+.navbar .nav-link-donar{
+  color:var(--blanco);
+  transition: color 0.3s;
+}
+
+.nav-link-donar.active, .nav-link-donar:hover{
+  color: var(--azul);
+  background-color: var(--blanco);
+}
+
 .middle-right {
   display: flex;
   align-items: center;
@@ -82,6 +110,10 @@ html, body, #root{
 .nav-link.active, .nav-link:hover {
     color: var(--amarillo) !important; 
    border-bottom: 3px solid var(--amarillo);
+}
+
+.txt-nav{
+  padding-left: 120px ;
 }
 
 /*Configuracion boton Donar*/
@@ -357,6 +389,17 @@ html, body, #root{
   opacity: 1;
   transform: translateY(0);
 }
+
+
+/*Configuracion de contactos*/
+.donacion-ghandi{
+  border-radius: 16px;
+  height: auto;
+  width: 38%;
+  display: block;
+  margin: 2% auto;
+}
+
 
 /* Responsivo: en pantallas medianas y pequeñas */
 @media (max-width: 992px) {

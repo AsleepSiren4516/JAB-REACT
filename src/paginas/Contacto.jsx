@@ -1,13 +1,16 @@
 import NavBar2 from "../componentes/NavBar";
 import PiePagina from "../componentes/PiePagina";
 import Donacion from "../componentes/Donacion";
+import filosofico from "../assets/ghandi.jpeg"
 
 export default function Contacto() {
   return (
     <>
-      <NavBar2 />
 
       <div className="container mt-5">
+        <div>
+          <img src={filosofico} alt="fil" className="donacion-ghandi"></img>
+        </div>
 
         <h1>Contacto</h1>
 
