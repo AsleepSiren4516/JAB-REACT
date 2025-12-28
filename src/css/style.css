@@ -13,8 +13,8 @@
   --negro: hsl(0, 0%, 0%);
   --fondo: #FFFBF3;
   --footerAzul: rgba(13, 167, 224, 0.8);
-  --transAzul: rgba(11, 80, 105, 0.477);
-  --transAzulFuerte: rgba(25, 119, 153, 0.6);
+  --transfondo: rgba(3, 52, 82, 0.462);
+  --transAzulFuerte: rgba(13, 66, 86, 0.5);
 }
 
 
@@ -57,7 +57,7 @@ html, body, #root{
   padding: 0 1rem;
   position: relative; /* posición normal inicial */
   transition: all 0.3s ease;
-  left: 50px;
+  padding-left: 50px;
 }
 
 /*Configuracion del logo*/
@@ -90,16 +90,6 @@ html, body, #root{
   transition: color 0.3s;
 }
 
-.navbar .nav-link-donar{
-  color:var(--blanco);
-  transition: color 0.3s;
-}
-
-.nav-link-donar.active, .nav-link-donar:hover{
-  color: var(--azul);
-  background-color: var(--blanco);
-}
-
 .middle-right {
   display: flex;
   align-items: center;
@@ -121,15 +111,26 @@ html, body, #root{
 .nav-donar {
   padding: 10px 20px;
   background-color: var(--azul);
-  border-color: var(--blanco);
+  border: 1px solid var(--blanco);
   color: var(--blanco);
   border-radius: 5px;
   font-weight: 700;
   cursor: pointer;
   letter-spacing: .5px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
 }
 
-.nav-donar:hover{
+.nav-donar:hover {
+  color: var(--azul);
+  background-color: var(--blanco);
+}
+
+/* ACTIVE REAL */
+.nav-donar-active {
   color: var(--azul);
   background-color: var(--blanco);
 }
@@ -154,7 +155,7 @@ html, body, #root{
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--transAzul);
+  background-color: var(--transAzulFuerte);
   z-index: 1;
 }
 
@@ -234,12 +235,42 @@ html, body, #root{
 
 
 /* Línea inferior del footer */
-.footer-copy {
-  width: 100%;
-  text-align: center;
-  font-size: 0.85rem;
-  padding: 10px 0;
+.footer-bottom {
+  display: flex;
   background-color: var(--azul);
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5%;
+  font-size: 0.90rem;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer-bottom-col {
+  color: var(--blanco);
+}
+
+.footer-bottom-col a {
+  color: var(--blanco);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom-col a:hover {
+  color: var(--amarillo);
+}
+
+/* Alineaciones */
+.footer-bottom-col.left {
+  text-align: left;
+}
+
+.footer-bottom-col.center {
+  text-align: center;
+}
+
+.footer-bottom-col.right {
+  text-align: right;
 }
 
 .icono-social {
@@ -289,7 +320,7 @@ html, body, #root{
 .about-logo{
   position: absolute;
   top: 0;
-  left: 200px;
+  left: 270px;
   width: 100px;
 }
 
@@ -416,15 +447,183 @@ html, body, #root{
 }
 
 
-/*Configuracion de contactos*/
-.donacion-ghandi{
-  border-radius: 16px;
-  height: auto;
-  width: 38%;
-  display: block;
-  margin: 2% auto;
+/*Configuracion de donar*/
+.donar {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-image: url("../assets/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
+.donar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--transfondo);
+  z-index: 1;
+}
+
+.donar-contenedor {
+  position: relative;
+  z-index: 2;
+}
+
+.donar-image{
+  max-width: 100%;
+  max-height: 360px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px var(--transSombra);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.donar-title{
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 2.3rem;
+  color: var(--azul-muy-oscuro);
+  margin-bottom: 0.5rem;  
+}
+
+.donar-subtitle{
+  font-family: 'Alef', sans-serif;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: var(--azul-muy-oscuro);
+  margin-bottom: 1.5rem;
+}
+
+.donar-datos-subtitle{
+  color: var(--rojo-texto);
+}
+
+.donar-datos-title{
+  color: var(--azul-texto);
+}
+
+.donar-datos{
+  max-width: 600px;
+  width: 90%;
+  background-color: var(--transAzul);
+  margin: 0 auto;
+  border-radius: 30px;
+  padding: 30px 20px;
+}
+
+.donar-datos-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  gap: 20px;
+}
+
+.donar-input-wrapper {
+  position: relative;
+  max-width: 280px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.donar-currency {
+  position: absolute;
+  left: 14px;
+  top: 35%;
+  transform: translateY(-50%);
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--azul-texto);
+}
+
+.donar-input {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 600;
+  border-radius: 14px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.donar-btn{
+  border: 1px solid var(--blanco);
+  background-color: var(--azulFuerte);
+  color: var(--blanco);
+}
+
+.donar-btn:hover{
+  border: 1px solid var(--azulFuerte);
+  background-color: var(--amarillo);
+  color: var(--azul-texto);
+}
+
+/*Configuracion contactos*/
+.text-capacitacion{
+  color: var(--rojo-texto);
+}
+
+.icono-social {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid var(--blanco);
+  background-color: var(--azulFuerte);
+  color: var(--blanco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
+  font-size: 1.7rem;
+  transition: 0.3s;
+  gap: 10px;
+}
+
+.icono-contacto {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid var(--blanco);
+  background-color: var(--azulFuerte);
+  color: var(--blanco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 120px;
+  font-size: 1.7rem;
+  transition: 0.3s;
+  gap: 10px;
+}
+
+.text-oscuro{
+  color: var(--azul-muy-oscuro);
+}
+
+/* Configuracion sobre nosotros*/
+.about-fondo {
+  padding: 350px;
+  padding-bottom: 20px;
+  background-image: url("../assets/fondo-about.jpg");
+  background-size: 100%;
+  background-position: top center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.about-fondo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.head-title, .head-subtitle{
+  color:var(--azul-muy-oscuro);
+}
+
+.about-fondo .container{
+  margin-top: 20px;
+}
 
 /* Responsivo: en pantallas medianas y pequeñas */
 @media (max-width: 992px) {

@@ -88,15 +88,16 @@ export default function NavBar() {
             </NavLink>
           </li>
         </ul>
+      
+          <NavLink
+            to="/donar"
+            className={({ isActive }) =>
+              isActive ? "nav-donar nav-donar-active" : "nav-donar"
+            }
+          >
+            Donar
+          </NavLink>
 
-        <button className="nav-donar">
-          <NavLink to="/Donar"
-            className={({isActive}) =>
-              isActive ? "nav-link-donar active" : "nav-link-donar"
-            } 
-
-          >Donar</NavLink>
-          </button>
       </div>
     </nav>
   );
