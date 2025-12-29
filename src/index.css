@@ -88,7 +88,7 @@ p, blockquote {
   font-weight: 400;
 }
 
-section, .container, .carousel, .carousel-inner {
+ .carousel, .carousel-inner {
   background-color: transparent !important;
 }
 

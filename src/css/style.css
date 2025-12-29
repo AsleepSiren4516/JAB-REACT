@@ -14,7 +14,7 @@
   --fondo: #FFFBF3;
   --footerAzul: rgba(13, 167, 224, 0.8);
   --transfondo: rgba(3, 52, 82, 0.462);
-  --transAzulFuerte: rgba(13, 66, 86, 0.5);
+  --transAzulFuerte: rgba(37, 141, 179, 0.551);
 }
 
 
@@ -624,6 +624,57 @@ html, body, #root{
 .about-fondo .container{
   margin-top: 20px;
 }
+
+/* Sección valores */
+.valores-section {
+  padding: 5rem 0;
+}
+
+.valor-card {
+  height: 100%;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow:var(--transSombra);
+}
+
+.valor-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.valor-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blanco);
+  font-size: 28px;
+}
+
+.valor-card h5 {
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.valor-card p {
+  font-size: 0.95rem;
+  color: var(--azul-muy-oscuro);
+}
+
+/* FONDOS */
+.valor-inclusion { background-color: var(--transAzulFuerte); }
+.valor-honestidad { background-color: var(--transAzulFuerte); }
+.valor-empatia { background-color: var(--transAzulFuerte); }
+.valor-responsabilidad { background-color: var(--transAzulFuerte); }
+.valor-compromiso { background-color: var(--transAzulFuerte); }
+.valor-profesionalismo { background-color: var(--transAzulFuerte); }
+.valor-equipo { background-color: var(--transAzulFuerte); }
+
 
 /* Responsivo: en pantallas medianas y pequeñas */
 @media (max-width: 992px) {
