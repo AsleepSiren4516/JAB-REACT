@@ -481,35 +481,6 @@ html, body, #root{
   position: relative;
 }
 
-.carrousel-valores::before,
-.carrousel-valores::after{
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 25px;
-  height: 100%;
-  z-index: 2;
-  pointer-events: none; /* no bloquea el scroll */
-}
-
-.carrousel-valores::before{
-  left: 0;
-  background: linear-gradient(
-    to right,
-    var(--blanco),
-    rgba(255,255,255,0)
-  );
-}
-
-.carrousel-valores::after{
-  right: 0;
-  background: linear-gradient(
-    to left,
-    rgba(255,255,255,1),
-    rgba(255,255,255,0)
-  );
-}
-
 
 .carrousel-valores::-webkit-scrollbar{
   display: none;
