@@ -1,49 +1,67 @@
-import React from "react";
-import "../css/style.css";
-
-// Importa las imágenes de tus servicios
-import Servicio1 from "../assets/service-1.jpg";
-import Servicio2 from "../assets/service-2.jpg";
-import Servicio3 from "../assets/service-3.jpg";
-import Servicio4 from "../assets/service-4.jpg";
+import Carrusel from "../componentes/Carrusel";
+import FotoServ1_1 from "../assets/7CB7E6E4.jpg";
+import FotoServ1_2 from "../assets/7CB7E6E4.jpg";
+import FotoServ2_1 from "../assets/7CB7E6E4.jpg";
 
 export default function Servicios() {
-  const servicios = [
-    {
-      id: 1,
-      img: Servicio1,
-      titulo: "Servicio 1",
-      descripcion: "Descripción breve del servicio 1.",
-    },
-    {
-      id: 2,
-      img: Servicio2,
-      titulo: "Servicio 2",
-      descripcion: "Descripción breve del servicio 2.",
-    },
-    {
-      id: 3,
-      img: Servicio3,
-      titulo: "Servicio 3",
-      descripcion: "Descripción breve del servicio 3.",
-    },
-    {
-      id: 4,
-      img: Servicio4,
-      titulo: "Servicio 4",
-      descripcion: "Descripción breve del servicio 4.",
-    },
+
+  const fotosMedico = [
+    { src: FotoServ1_1, descripcionFoto: "Consulta de especialidad para niños" },
+    { src: FotoServ1_2, descripcionFoto: "Equipamiento médico moderno" }
+  ];
+
+  const fotosTerapia = [
+    { src: FotoServ2_1, descripcionFoto: "Área de rehabilitación física" }
   ];
 
   return (
-    <div className="servicios-container">
-      {servicios.map((servicio) => (
-        <div key={servicio.id} className="servicio-card">
-          <img src={servicio.img} alt={servicio.titulo} className="servicio-img" />
-          <h3 className="servicio-titulo">{servicio.titulo}</h3>
-          <p className="servicio-texto">{servicio.descripcion}</p>
+    <>
+      <div className="services-fondo">    
+        <div className="pt-5 px-5">
+          <div className="container-titulos pt-5 px-4">
+            <h1 className="head-title pt-5" style={{color: "#123448"}}>Nuestros servicios</h1>
+            <p className="head-subtitle">Comprometidos con tu bienestar</p>   
+          </div>    
         </div>
-      ))}
-    </div>
+      </div>
+
+      <section className="seccion-layout py-5">
+        <div className="container">
+          
+          <div className="row align-items-center g-5 mb-5">
+            <div className="col-lg-6">
+              <Carrusel items={fotosMedico} modoServicios={true} />
+            </div>
+            <div className="col-lg-6">
+              <h2 className="serv-titulo-interno">Atención Médica</h2>
+              <p className="general-text">
+                Ofrecemos servicios de salud integral para garantizar que cada paciente 
+                reciba el tratamiento adecuado a sus necesidades específicas.
+              </p>
+              <div className="serv-contacto-box">
+                <strong>Contacto: 33 1234 5678</strong>
+              </div>
+            </div>
+          </div>
+
+          <div className="row align-items-center g-5 flex-row-reverse">
+            <div className="col-lg-6">
+              <Carrusel items={fotosTerapia} modoServicios={true} />
+            </div>
+            <div className="col-lg-6">
+              <h2 className=" ">Terapias de Rehabilitación</h2>
+              <p className="general-text">
+                Contamos con personal capacitado en fisioterapia y apoyo intelectual 
+                para promover la autonomía de nuestros beneficiarios.
+              </p>
+              <div className="serv-contacto-box">
+                <strong>Informes: contacto@jab.org</strong>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </>
   );
 }

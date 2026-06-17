@@ -9,6 +9,7 @@ import Transparencia from "./paginas/Transparencia";
 import Donar from "./paginas/Donar"
 import "./css/style.css";
 import "./index.css";
+import Privacidad from "./paginas/Privacidad";
 
 
 function App() {
@@ -20,8 +21,9 @@ function App() {
         <Route path="/sobre" element={<Sobre />} />
         <Route path="/servicios" element={<Servicios />} />
         <Route path="/contacto" element={<Contacto />} />
-        <Route path="/tranparencia" element={<Transparencia/>}></Route>
-        <Route path="/Donar" element={<Donar/>}></Route>
+        <Route path="/transparencia" element={<Transparencia/>} />
+        <Route path="/Donar" element={<Donar/>} />
+        <Route path="/Privacidad" element={<Privacidad/>} />
       </Routes>
       <PiePagina/>
     </BrowserRouter>

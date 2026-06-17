@@ -1,111 +1,149 @@
-export default function Sobre() {
-  const valores = [
-    {
-      titulo: "Inclusión",
-      texto: "Promovemos la participación equitativa de todas las personas, valorando la diversidad y la igualdad de oportunidades.",
-      icono: "fa-users",
-      color: "rgba(249, 204, 58, 0.5)",
-      iconBg: "#dcb73cff",
-      radius: "30px 10px"
-    },
-    {
-      titulo: "Honestidad",
-      texto: "Actuar con transparencia e integridad en todas las acciones y comunicaciones de la asociación.",
-      icono: "fa-balance-scale",
-      color: "rgba(255, 212, 71, 0.5)",
-      iconBg: "#0DA7E0",
-      radius: "10px 30px"
-    },
-    {
-      titulo: "Empatía",
-      texto: "Comprendemos las emociones y circunstancias de los demás sin juzgar.",
-      icono: "fa-heart",
-      color: "rgba(13, 167, 224, 0.5)",
-      iconBg: "#0DA7E0",
-      radius: "40px 10px"
-    },
-    {
-      titulo: "Responsabilidad",
-      texto: "Actuamos en favor del bienestar y crecimiento de la comunidad.",
-      icono: "fa-hand-holding-heart",
-      color: "rgba(13, 167, 224, 0.5)",
-      iconBg: "#0DA7E0",
-      radius: "20px 40px"
-    },
-    {
-      titulo: "Compromiso",
-      texto: "Servimos y transformamos vidas con pasión y constancia.",
-      icono: "fa-handshake",
-      color: "rgba(13, 167, 224, 0.5)",
-      iconBg: "#0DA7E0",
-      radius: "40px 20px"
-    },
-    {
-      titulo: "Profesionalismo",
-      texto: "Atención de calidad mediante un equipo capacitado y ético.",
-      icono: "fa-briefcase",
-      color: "rgba(13, 167, 224, 0.5)",
-      iconBg: "#0DA7E0",
-      radius: "25px 10px"
-    },
-    {
-      titulo: "Trabajo en equipo",
-      texto: "Fomentamos la colaboración entre profesionales, familias y comunidad.",
-      icono: "fa-people-carry",
-      color: "rgba(13, 167, 224, 0.5)",
-      iconBg: "#0DA7E0",
-      radius: "50px",
-      full: true
-    }
-  ];
+import { FaUsers, FaBalanceScale, FaHeart, FaHandHoldingHeart, FaHandshake, FaBriefcase } from "react-icons/fa";
+import { FaPeopleGroup } from "react-icons/fa6";
+import objetivos from "../assets/objetivos.png";
+import mariposa from "../assets/mariposa.svg";
+import mv from "../assets/collage.png";
+import tarjeta from "../assets/tarjetas.svg"
+import tarjeta2 from "../assets/tarjetas2.svg"
 
+export default function Sobre() {
   return (
     <>
-      <div className="about-fondo">
-        <div className="container start">
-          <h1 className="head-title">Sobre nosotros</h1>
-          <p className="head-subtitle">Contenido sobre la organización…</p>
+    <div className="about-fondo">    
+      <div className="pt-5 px-5">
+        <div className="container-titulos pt-5 px-5">
+          <h1 className="head-title pt-5" style={{color: "#123448"}}>Sobre nosotros</h1>
+          <p className="head-subtitle">Lo que nos define</p>   
+        </div>    
+      </div>
+    </div>
+    <div>
+
+    <section className="seccion-layout py-5">
+      <div className="container">
+        <div className="row align-items-center g-5">
+          <div className="col-lg-6">
+            <span className="txt-subtitle">Acompañando a las personas en cada etapa</span>
+            <img src={objetivos} alt="objetivos" className="img-objetivos w-100"/>
+          </div>
+          <div className="col-lg-6 container-texto-about"> 
+            <h1 className="txt-title">Objetivos</h1>
+            <img src={mariposa} className="objetivos-mariposa"/>
+            <p className="general-text">
+              Nuestro objetivo es consolidar un centro multidisciplinario accesible para toda la comunidad, diseñado para ofrecer soluciones integrales que respondan con precisión a las necesidades sociales, médicas y humanas de las familias.
+            </p>
+          </div>
         </div>
       </div>
+    </section>
 
-      <section className="valores-section">
-        <div className="container">
-          <div className="text-center mb-5">
-            <h4 className="valores-subtitle">Nuestros</h4>
-            <h1 className="valores-title">Valores</h1>
+    <section className="seccion-layout py-5">
+      <div className="container-fluid"> 
+        <div className="row align-items-center">
+
+          <div className="col-lg-3 container-texto-about text-center">
+            <h2 className="txt-titulo">Misión</h2>
+            <p className="mv-text">Elevamos la calidad de vida de las personas con discapacidad y sus familias,
+              liderando una cultura de inclusión real y participación social para el
+              bienestar colectivo.</p>
           </div>
 
-          <div className="row g-4">
-            {valores.map((v, i) => (
-              <div
-                key={i}
-                className={`col-lg-${v.full ? "12" : "4"} col-md-6`}
-              >
-                <div
-                  className="valor-card"
-                  style={{
-                    backgroundColor: v.color,
-                    borderRadius: v.radius
-                  }}
-                >
-                  <div
-                    className="valor-icon"
-                    style={{ backgroundColor: v.iconBg }}
-                  >
-                    <i className={`fa ${v.icono}`}></i>
-                  </div>
+          <div className="col-lg-6 d-flex justify-content-center my-4 my-lg-0">
+            <img src={mv} alt="Misión y Visión" className="mv-image" />
+          </div>
 
-                  <h5>{v.titulo}</h5>
-                  <p>{v.texto}</p>
-                </div>
+          <div className="col-lg-3 container-texto-about text-center">
+            <h2 className="txt-titulo">Visión</h2>
+            <p className="mv-text">Brindamos apoyo integral médico, legal y pedagógico, junto con programas
+                deportivos, culturales y de formación laboral que impulsan la autonomía y
+                el desarrollo social.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="py-5">
+      <div className="container">
+        <div className="text-center mb-5 position-relative">
+          <h2 className="txt-titulo">Valores</h2>
+        </div>
+        <br />
+          <div className="valores-container">
+
+            <div className="valor-card" style={{ backgroundImage: `url(${tarjeta})` }}>
+              <div className="valor-icon">
+                <FaBalanceScale />
               </div>
-            ))}
+              <div className="valor-content">
+                <h1>Honestidad</h1>
+                <p>Actuar con transparencia e integridad en todas las acciones y comunicaciones de la asociación.</p>
+              </div>
+            </div>
+
+            <div className="valor-card" style={{ backgroundImage: `url(${tarjeta})` }}>
+              <div className="valor-icon">
+                <FaHeart />
+              </div>
+              <div className="valor-content">
+                <h1>Empatía</h1>
+                <p>Comprendemos las emociones y circunstancias de los demás sin juzgar.</p>
+              </div>
+            </div>
+
+            <div className="valor-card" style={{ backgroundImage: `url(${tarjeta})` }}>
+              <div className="valor-icon">
+                <FaHandHoldingHeart />
+              </div>
+              <div className="valor-content">
+                <h1>Responsabilidad</h1>
+                <p>Actuamos en favor del bienestar y crecimiento de la comunidad.</p>
+              </div>
+            </div>
+
+            <div className="valor-card" style={{ backgroundImage: `url(${tarjeta})` }}>
+              <div className="valor-icon">
+                <FaHandshake />
+              </div>
+              <div className="valor-content">
+                <h1>Compromiso</h1>
+                <p>Servimos y transformamos vidas con pasión y constancia.</p>
+              </div>
+            </div>
+
+            <div className="valor-card" style={{ backgroundImage: `url(${tarjeta})` }}>
+              <div className="valor-icon">
+                <FaBriefcase />
+              </div>
+              <div className="valor-content">
+                <h1>Profesionalismo</h1>
+                <p>Atención de calidad mediante un equipo capacitado y ético.</p>
+              </div>
+            </div>
+
+            <div className="valor-card" style={{ backgroundImage: `url(${tarjeta})` }}>
+              <div className="valor-icon">
+                <FaPeopleGroup />
+              </div>
+              <div className="valor-content">
+                <h1>Trabajo en equipo</h1>
+                <p>Fomentamos la colaboración entre profesionales, familias y comunidad.</p>
+              </div>
+            </div>
+
+            <div className="valor-card full" style={{ backgroundImage: `url(${tarjeta2})` }}>
+              <div className="valor-icon">
+                <FaUsers />
+              </div>
+              <div className="valor-content">
+                <h1>Inclusión</h1>
+                <p>Promovemos la participación equitativa de todas las personas, valorando la diversidad y la igualdad de oportunidades.</p>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
+    </div>
     </>
   );
 }
-
-
-

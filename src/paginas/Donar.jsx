@@ -1,6 +1,5 @@
 import Donacion from "../componentes/Donacion";
 import filosofo from "../assets/ghandi.jpeg";
-import fondo from "../assets/bg.jpg"
 
 export default function Donar(){
     return (

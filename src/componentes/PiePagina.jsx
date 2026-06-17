@@ -23,8 +23,8 @@ export default function PiePagina() {
 
       <div className="footer-bottom">
         <div className="footer-bottom-col left">
-          <a href="#">Términos y condiciones</a> |{" "}
-          <a href="#">Aviso de privacidad</a>
+          <a href="/Aviso de Privacidad - JAB.pdf" target="_blank" rel="noopener noreferrer">Aviso de privacidad</a> |{" "}
+          <a href="#">Términos y condiciones</a>
         </div>
 
         <div className="footer-bottom-col center">
