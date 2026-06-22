@@ -66,6 +66,7 @@ export default function Sobre() {
       <div className="container">
         <div className="text-center mb-5 position-relative">
           <h2 className="txt-titulo">Valores</h2>
+          <h3 className="general-text text-center">Principios que guían cada una de nuestras acciones</h3>
         </div>
         <br />
           <div className="valores-container">

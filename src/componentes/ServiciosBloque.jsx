@@ -17,11 +17,16 @@ export default function ServiciosBloque() {
   return (
     <section className="servicios-section py-5">
       <div className="container">
+        
         <div className="text-center mb-5 position-relative">
+          <div>
+            <span className="relleno-rojo">Inspirando nuevos caminos</span>
+          </div>   
           <h2 className="txt-titulo">Nuestros Servicios</h2>
+          <h3 className="general-text text-center mt-1">Programas diseñados para generar oportunidades</h3>
         </div>
-
-        <div className="row g-4 justify-content-center">
+       
+        <div className="row g-4 justify-content-center mt-1">
           {servicios.map((s) => (
             <div key={s.id} className="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
               <div className="tarjeta">

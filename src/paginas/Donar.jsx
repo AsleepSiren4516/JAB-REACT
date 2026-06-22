@@ -1,5 +1,6 @@
 import Donacion from "../componentes/Donacion";
 import filosofo from "../assets/ghandi.jpeg";
+import { FaHeart } from "react-icons/fa";
 
 export default function Donar(){
     return (

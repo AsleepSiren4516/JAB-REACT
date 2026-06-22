@@ -847,6 +847,17 @@ html, body, #root{
   z-index: 2;
 }
 
+/* No se si vaya aqui esto */
+.relleno-rojo{
+  display: inline-block;
+  padding: 8px 15px;
+  border: 2px solid var(--rojo);
+  border-radius: 24px;
+  color: var(--rojo);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
 /* --- CARA ATRÁS--- */
 .tarjeta .atras {
   transform: rotateY(180deg);
