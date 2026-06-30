@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { FaHeart } from "react-icons/fa";
 
 export default function Donacion() {
   const [cantidad, setCantidad] = useState("");
+
+  const montos = [100, 250, 500];
 
   return (
     <form
@@ -13,8 +16,39 @@ export default function Donacion() {
       <input type="hidden" name="business" value="7UR3QW4YYSDCQ" />
       <input type="hidden" name="currency_code" value="MXN" />
 
+      {/* Botones de monto */}
+      <div className="montos-container">
+        {montos.map((monto) => (
+          <button
+            key={monto}
+            type="button"
+            className={`monto-btn ${
+              Number(cantidad) === monto ? "activo" : ""
+            }`}
+            onClick={() => setCantidad(monto)}
+          >
+            <strong>${monto}</strong>
+            <span>Pesos</span>
+          </button>
+        ))}
+
+        <button
+          type="button"
+          className={`monto-btn ${
+            cantidad !== "" && !montos.includes(Number(cantidad))
+              ? "activo"
+              : ""
+          }`}
+        >
+          <strong>Otro</strong>
+          <span>monto</span>
+        </button>
+      </div>
+
+      {/* Input */}
       <div className="donar-input-wrapper">
         <span className="donar-currency">$</span>
+
         <input
           type="number"
           name="amount"
@@ -27,9 +61,8 @@ export default function Donacion() {
         />
       </div>
 
-
-      <button type="submit" className="donar-btn btn-primary btn-lg px-5">
-        <i className="fab fa-paypal mr-2"></i> Donar
+      <button type="submit" className="donar-btn btn-primary btn-lg">
+        <FaHeart /> Donar ahora
       </button>
     </form>
   );

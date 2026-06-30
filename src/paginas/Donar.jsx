@@ -1,6 +1,6 @@
 import Donacion from "../componentes/Donacion";
 import filosofo from "../assets/ghandi.jpeg";
-import { FaHeart } from "react-icons/fa";
+import { FaHeart, FaLock, FaBoxOpen } from "react-icons/fa";
 
 export default function Donar(){
     return (
@@ -32,20 +32,47 @@ export default function Donar(){
           </div>
         </div>
    
-        <div className="d-flex flex-column align-items-center">
-          <h4 className="donar-datos-subtitle pt-4">Apoyanos</h4>
-          <h1 className="donar-datos-title mt-2">Haz la diferencia</h1>
-        </div>  
-        <br/>
+        <div className="container-fluid px-5">
+          <div className="row">
 
-        <div className="py-2 pb-4">
-          <div className="donar-datos">
-            <div className="donar-datos-inner">
-              <p className="about-text text-center">Tu apoyo nos ayuda a continuar con nuestra labor y a cambiar vidas. ¡Gracias por tu donación!</p>
-              <Donacion />
-            </div>      
+            {/* Contenedor 1 (más ancho) */}
+            <div className="col-lg-8">
+              <div className="donar-form text-start">
+                <div className="d-flex flex-column">
+                  <h1 className="donar-datos-title mt-3">Donacion economica</h1>
+                </div>
+                <div className="py-0 pb-1">
+                  <div className="donar-datos">
+                    <div className="donar-datos-inner">
+                      
+                      {/*
+                      <p className="about-text">
+                        Tu apoyo nos ayuda a continuar con nuestra labor y a cambiar vidas. ¡Gracias por tu donación!
+                      </p>
+                      */}
+
+                      <p className="monto">Selecciona un monto</p>
+                      
+                      <Donacion />   
+                      <p className="pago-seguro py-1 my-0 fs-6 "><FaLock/>Pago seguro. Todas las transacciones están cifradas y se realizan mediante PayPal.</p>
+                    </div>
+                  </div>
+                  <hr />
+                </div>
+                <h3 className="general-text"><FaBoxOpen/>Tambien puedes donar en especie</h3>
+              </div>
+            </div>
+
+            {/* Contenedor 2 (más pequeño) */}
+            <div className="col-lg-4">
+              <div className="donar-info">
+                Aquí irá el segundo contenedor
+              </div>
+            </div>
+
           </div>
         </div>
+                    
         </>
       );
 }

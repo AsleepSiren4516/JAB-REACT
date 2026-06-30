@@ -948,12 +948,33 @@ html, body, #root{
   z-index: 2;
 }
 
+
 .donar-image{
   max-width: 100%;
   max-height: 360px;
   object-fit: cover;
   box-shadow: 0 15px 35px var(--transSombra);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.donar-form{
+    border: 2px solid red;
+    min-height: 400px;
+}
+
+.donar-info{
+    border: 2px solid blue;
+    min-height: 400px;
+}
+
+.donar-btn{
+  width: 100%;
+  max-width: 920px; 
+  height: 50px;
+  border-radius: 10px;
+  color: var(--blanco);
+  background-color: var(--rojo);
+  border: 20px;
 }
 
 .donar-title{
@@ -972,35 +993,31 @@ html, body, #root{
   margin-bottom: 1.5rem;
 }
 
-.donar-datos-subtitle{
-  color: var(--rojo-texto);
-}
-
 .donar-datos-title{
   color: var(--azul-texto);
+
 }
 
 .donar-datos{
-  max-width: 600px;
-  width: 90%;
   background-color: var(--transAzul);
   margin: 0 auto;
-  border-radius: 30px;
-  padding: 30px 20px;
+  padding: 5px 0px;
 }
 
 .donar-datos-inner {
   display: flex;
   flex-direction: column;
-  align-items: center; 
-  gap: 20px;
+  align-items: flex-start; 
+  gap: 2px;
+  width: 100%;
+  
 }
 
 .donar-input-wrapper {
   position: relative;
-  max-width: 280px;
+  max-width: 920px;
   width: 100%;
-  margin: 0 auto;
+  
 }
 
 .donar-currency {
@@ -1021,6 +1038,56 @@ html, body, #root{
   margin-bottom: 16px;
   width: 100%;
 }
+
+.pago-seguro{
+  align-self: center;
+  color: #828282;
+  
+}
+
+.monto{
+  color: #828282;
+}
+
+
+.montos-container{
+    display:flex;
+    gap:12px;
+    width:100%;
+    margin-bottom:20px;
+    width: 920px;
+}
+
+.monto-btn{
+    flex:1;
+    border:2px solid #ddd;
+    border-radius:12px;
+    background:#fff;
+    padding:12px 8px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    cursor:pointer;
+    transition:.2s;
+}
+
+.monto-btn strong{
+    font-size:1.2rem;
+    color: var(--azul-texto);
+}
+
+.monto-btn span{
+    font-size:.85rem;
+    color:#777;
+}
+
+.monto-btn.activo{
+    border-color:#3cb8e8;
+    background:#eef9ff;
+}
+
 
 
 /*Configuracion contactos*/
