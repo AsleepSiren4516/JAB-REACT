@@ -55,6 +55,7 @@ export default function Donacion() {
           placeholder="0"
           value={cantidad}
           onChange={(e) => setCantidad(e.target.value)}
+          onClick={() => setCantidad("")}
           className="form-control donar-input"
           min="1"
           required

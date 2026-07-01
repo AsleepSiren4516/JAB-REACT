@@ -1,6 +1,6 @@
 import Donacion from "../componentes/Donacion";
 import filosofo from "../assets/ghandi.jpeg";
-import { FaHeart, FaLock, FaBoxOpen } from "react-icons/fa";
+import { FaHeart, FaLock, FaBoxOpen, FaHeartbeat, FaTshirt, FaPuzzlePiece, FaShoppingBasket} from "react-icons/fa";
 
 export default function Donar(){
     return (
@@ -39,7 +39,7 @@ export default function Donar(){
             <div className="col-lg-8">
               <div className="donar-form text-start">
                 <div className="d-flex flex-column">
-                  <h1 className="donar-datos-title mt-3">Donacion economica</h1>
+                  <h1 className="donar-datos-title mt-5">Donacion economica</h1>
                 </div>
                 <div className="py-0 pb-1">
                   <div className="donar-datos">
@@ -54,12 +54,23 @@ export default function Donar(){
                       <p className="monto">Selecciona un monto</p>
                       
                       <Donacion />   
-                      <p className="pago-seguro py-1 my-0 fs-6 "><FaLock/>Pago seguro. Todas las transacciones están cifradas y se realizan mediante PayPal.</p>
+                      <p className="pago-seguro py-1 my-0 fs-6"><FaLock className="me-1"/>Pago seguro con PayPal</p>
+                      
                     </div>
                   </div>
                   <hr />
                 </div>
-                <h3 className="general-text"><FaBoxOpen/>Tambien puedes donar en especie</h3>
+                <div>
+                  <h3 className="general-text mb-3 fs-5"><FaBoxOpen className="me-2 iconos"/>Tambien puedes donar en especie</h3>
+                  <p><FaHeartbeat className="iconos me-3"/>Aparatos medicos</p>
+                  <hr/>
+                  <p><FaTshirt className="me-3 iconos"/>Ropa en buen estado</p>
+                  <hr/>
+                  <p><FaShoppingBasket className="me-3 iconos"/>Despensas y alimentos no perecederos</p>
+                  <hr/>
+                  <p><FaPuzzlePiece className="me-3 iconos"/>Juguetes y articulos para niñodfgdfed</p>
+                  <hr/>
+                </div>
               </div>
             </div>
 
