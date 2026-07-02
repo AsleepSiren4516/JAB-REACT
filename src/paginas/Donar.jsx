@@ -59,7 +59,7 @@ export default function Donar(){
                       
                     </div>
                   </div>
-                  <hr className=""/>
+                  <hr/>
                 </div>
                 <div>
                   <h3 className="general-text mb-3 fs-5"><FaBoxOpen className="me-2 iconos"/>Tambien puedes donar en especie</h3>
@@ -82,7 +82,16 @@ export default function Donar(){
             {/* Contenedor 2 (más pequeño) */}
             <div className="col-lg-4">
               <div className="donar-info">
-                <h3 className="general-text mt-5">Tu donacion hace posible</h3>
+                <h3 className="general-text mt-5">Tu donacion hace posible...</h3>
+              </div>
+              <div>
+                
+              </div>
+              <div>
+
+              </div>
+              <div>
+
               </div>
             </div>
 
