@@ -1,6 +1,7 @@
+import { NavLink } from "react-router-dom";
 import Donacion from "../componentes/Donacion";
 import filosofo from "../assets/ghandi.jpeg";
-import { FaHeart, FaLock, FaBoxOpen, FaHeartbeat, FaTshirt, FaPuzzlePiece, FaShoppingBasket} from "react-icons/fa";
+import { FaHeart, FaLock, FaBoxOpen, FaHeartbeat, FaTshirt, FaPuzzlePiece, FaShoppingBasket, FaArrowCircleRight} from "react-icons/fa";
 
 export default function Donar(){
     return (
@@ -32,7 +33,7 @@ export default function Donar(){
           </div>
         </div>
    
-        <div className="container-fluid px-5">
+        <div className="container py-3">
           <div className="row">
 
             {/* Contenedor 1 (más ancho) */}
@@ -58,7 +59,7 @@ export default function Donar(){
                       
                     </div>
                   </div>
-                  <hr />
+                  <hr className=""/>
                 </div>
                 <div>
                   <h3 className="general-text mb-3 fs-5"><FaBoxOpen className="me-2 iconos"/>Tambien puedes donar en especie</h3>
@@ -68,16 +69,20 @@ export default function Donar(){
                   <hr/>
                   <p><FaShoppingBasket className="me-3 iconos"/>Despensas y alimentos no perecederos</p>
                   <hr/>
-                  <p><FaPuzzlePiece className="me-3 iconos"/>Juguetes y articulos para niñodfgdfed</p>
-                  <hr/>
+                  <p><FaPuzzlePiece className="me-3 iconos"/>Juguetes y articulos para niños</p>
+                  <hr/>            
+                  <div className="text-center my-4 mb-5">
+                    <NavLink to="/contacto" className="general-text autores fs-5.5 text-decoration-none">
+                    Contáctanos para coordinar tu donación <FaArrowCircleRight />
+                    </NavLink>
+                  </div>
                 </div>
               </div>
             </div>
-
             {/* Contenedor 2 (más pequeño) */}
             <div className="col-lg-4">
               <div className="donar-info">
-                Aquí irá el segundo contenedor
+                <h3 className="general-text mt-5">Tu donacion hace posible</h3>
               </div>
             </div>
 

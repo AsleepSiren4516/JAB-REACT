@@ -1063,7 +1063,7 @@ html, body, #root{
     gap:12px;
     width:100%;
     margin-bottom:20px;
-    width: 920px;
+    max-width: 920px;
 }
 
 .monto-btn{
@@ -1092,7 +1092,7 @@ html, body, #root{
 }
 
 .monto-btn.activo{
-    border-color:#3cb8e8;
+    border-color:var(--azul);
     background:#eef9ff;
 }
 
