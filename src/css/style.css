@@ -847,7 +847,6 @@ html, body, #root{
   z-index: 2;
 }
 
-/* No se si vaya aqui esto */
 .relleno-rojo{
   display: inline-block;
   padding: 8px 15px;
@@ -855,7 +854,7 @@ html, body, #root{
   border-radius: 24px;
   color: var(--rojo);
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 /* --- CARA ATRÁS--- */

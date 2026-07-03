@@ -20,10 +20,10 @@ export default function ServiciosBloque() {
         
         <div className="text-center mb-5 position-relative">
           <div>
-            <span className="relleno-rojo">Inspirando nuevos caminos</span>
+            <span className="relleno-rojo">Nuestros Servicios</span>
           </div>   
-          <h2 className="txt-titulo">Nuestros Servicios</h2>
-          <h3 className="general-text text-center mt-1">Programas diseñados para generar oportunidades</h3>
+          <h2 className="txt-titulo">Programas que transforman vidas</h2>
+          <p className="general-text text-center mt-3">Impulsamos una sociedad donde las personas cuenten con las herramientas para superar barreras y desarrollarse plenamente, promoviendo su bienestar físico, social y cognitivo.</p>
         </div>
        
         <div className="row g-4 justify-content-center mt-1">
