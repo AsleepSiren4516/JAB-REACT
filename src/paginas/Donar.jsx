@@ -80,19 +80,22 @@ export default function Donar(){
               </div>
             </div>
             {/* Contenedor 2 (más pequeño) */}
-            <div className="col-lg-4">
-              <div className="donar-info">
+            <div className="donar-info col-lg-4">
+              <div>
                 <h3 className="general-text mt-5">Tu donacion hace posible...</h3>
               </div>
-              <div>
-                
+              <div className="my-5">
+                <div className="cartas-donacion">
+                  <p className="text-start">Sesiones de psicologias</p>
+                </div>
+                <div className="cartas-donacion">
+                  <p className="text-start">Sesiones de psicologias</p>                     
+                </div>
+                <div className="cartas-donacion">
+                  <p className="text-start">Sesiones de psicologias</p>         
+                </div>              
               </div>
-              <div>
-
-              </div>
-              <div>
-
-              </div>
+              
             </div>
 
           </div>
