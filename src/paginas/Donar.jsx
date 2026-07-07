@@ -1,7 +1,8 @@
 import { NavLink } from "react-router-dom";
 import Donacion from "../componentes/Donacion";
 import filosofo from "../assets/ghandi.jpeg";
-import { FaHeart, FaLock, FaBoxOpen, FaHeartbeat, FaTshirt, FaPuzzlePiece, FaShoppingBasket, FaArrowCircleRight} from "react-icons/fa";
+import { FaHeart, FaLock, FaBoxOpen, FaHeartbeat, FaTshirt, FaPuzzlePiece, FaShoppingBasket, FaArrowCircleRight, FaBrain, FaWheelchair, FaPaintBrush } from "react-icons/fa";
+import { BsPersonWheelchair } from "react-icons/bs";
 
 export default function Donar(){
     return (
@@ -71,7 +72,7 @@ export default function Donar(){
                   <hr/>
                   <p><FaPuzzlePiece className="me-3 iconos"/>Juguetes y articulos para niños</p>
                   <hr/>            
-                  <div className="text-center my-4 mb-5">
+                  <div className="text-center my-5 mb-5">
                     <NavLink to="/contacto" className="general-text autores fs-5.5 text-decoration-none">
                     Contáctanos para coordinar tu donación <FaArrowCircleRight />
                     </NavLink>
@@ -86,14 +87,27 @@ export default function Donar(){
               </div>
               <div className="my-5">
                 <div className="cartas-donacion">
-                  <p className="text-start">Sesiones de psicologias</p>
+                  <FaBrain className="iconos"/>
+                  <p className="title-prin mt-2">Sesiones de psicologias</p>
+                  <p className="general-text mt-1">Para familias en situacion vulnerable</p>
                 </div>
                 <div className="cartas-donacion">
-                  <p className="text-start">Sesiones de psicologias</p>                     
+                  <FaWheelchair className="iconos"/>
+                  <p className="title-prin mt-2">Terapias de rehabilitacion</p>  
+                  <p className="general-text mt-1">Para personas con discapacidad</p>                   
                 </div>
                 <div className="cartas-donacion">
-                  <p className="text-start">Sesiones de psicologias</p>         
-                </div>              
+                  <FaPaintBrush className="iconos"/>
+                  <p className="title-prin mt-2">Actividades ludicas</p> 
+                  <p className="general-text mt-1">Para niñas y niños de la comunidad</p>        
+                </div> 
+                <div>
+                  <div className="cont-agradecimiento mt-4">
+                    <p className="agradecimiento-titulo">"Tus sueños son mis alas"</p>
+                    <p className="agradecimiento-text">Gracias por permitirnos ser parte de tu vuelo y de cada historia de transformacion</p>
+                    <p className="agradecimiento-text">- JAB Coloreando tu vida</p>
+                  </div>                   
+                </div>             
               </div>
               
             </div>

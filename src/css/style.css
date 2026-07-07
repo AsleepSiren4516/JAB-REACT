@@ -1123,13 +1123,48 @@ html, body, #root{
   box-shadow: 0 15px 30px rgba(0,0,0,.15);
 }
 
-.cartas-donacion p{
-  margin: 0;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--azul-texto);
+
+.cont-agradecimiento{
+  width: 100%;
+  min-height: 210px;
+  background: var(--azul-texto);
+  border-radius: 15px;
+  padding: 18px 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
+  transition: all .3s ease;
+  cursor: default;
 }
 
+.cont-agradecimiento:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,.15);
+}
+
+.general-text{
+  position: relative;
+  z-index: 2;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--azul-muy-oscuro);
+  margin-top: 1rem;
+  text-align: justify;
+}
+
+.agradecimiento-titulo{
+  position: relative;
+  z-index: 2;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--amarillo);
+  margin-top: 1rem;
+  text-align: justify;
+  font-weight: 600;
+}
+
+.agradecimiento-text{
+  color: var(--blanco);
+}
 
 /*Configuracion contactos*/
 .contacto-fondo{
