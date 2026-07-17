@@ -3,6 +3,7 @@ import Donacion from "../componentes/Donacion";
 import filosofo from "../assets/ghandi.jpeg";
 import { FaHeart, FaLock, FaBoxOpen, FaHeartbeat, FaTshirt, FaPuzzlePiece, FaShoppingBasket, FaArrowCircleRight, FaBrain, FaWheelchair, FaPaintBrush } from "react-icons/fa";
 import { BsPersonWheelchair } from "react-icons/bs";
+import logoCorazon from "../assets/corazon_logo.svg";
 
 export default function Donar(){
     return (
@@ -41,7 +42,8 @@ export default function Donar(){
             <div className="col-lg-8">
               <div className="donar-form text-start">
                 <div className="d-flex flex-column">
-                  <h1 className="donar-datos-title mt-5">Donacion economica</h1>
+                  <h1 className="donar-datos-title mt-5">Donacion economica</h1>          
+                  
                 </div>
                 <div className="py-0 pb-1">
                   <div className="donar-datos">
@@ -52,9 +54,8 @@ export default function Donar(){
                         Tu apoyo nos ayuda a continuar con nuestra labor y a cambiar vidas. ¡Gracias por tu donación!
                       </p>
                       */}
-
                       <p className="monto">Selecciona un monto</p>
-                      
+                    
                       <Donacion />   
                       <p className="pago-seguro py-1 my-0 fs-6"><FaLock className="me-1"/>Pago seguro con PayPal</p>
                       
@@ -84,6 +85,7 @@ export default function Donar(){
             <div className="donar-info col-lg-4">
               <div>
                 <h3 className="general-text mt-5">Tu donacion hace posible...</h3>
+                
               </div>
               <div className="my-5">
                 <div className="cartas-donacion">
@@ -103,9 +105,9 @@ export default function Donar(){
                 </div> 
                 <div>
                   <div className="cont-agradecimiento mt-4">
-                    <p className="agradecimiento-titulo">"Tus sueños son mis alas"</p>
-                    <p className="agradecimiento-text">Gracias por permitirnos ser parte de tu vuelo y de cada historia de transformacion</p>
-                    <p className="agradecimiento-text">- JAB Coloreando tu vida</p>
+                    <p className="agradecimiento-titulo text-center">"Tus sueños son mis alas"</p>
+                    <p className="agradecimiento-text text-center">Gracias por permitirnos ser parte de tu vuelo y de cada historia de transformacion</p>
+                    <p className="agradecimiento-text text-center"> <strong>- JAB Coloreando tu vida -</strong></p>
                   </div>                   
                 </div>             
               </div>

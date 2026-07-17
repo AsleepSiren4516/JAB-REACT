@@ -962,7 +962,7 @@ html, body, #root{
 
 .donar-info{
     min-height: 400px;
-    padding-left: 40px;
+    transform: translateX(50px);
 }
 
 .donar-btn{
@@ -971,7 +971,7 @@ html, body, #root{
   height: 50px;
   border-radius: 10px;
   color: var(--blanco);
-  background-color: var(--rojo);
+  background-color: var(--azul);
   border: 20px;
 }
 
@@ -1100,16 +1100,17 @@ html, body, #root{
   height: 22px;
   align-items: center;
   justify-content: center;
+  
   color: #e43b5aff;
   font-size: 45px;
   margin-right: 15px;
 }
 
 .cartas-donacion{
-  width: 100%;
-  min-height: 110px;
+  width: 350px;
+  min-height: 140px;
   background: #fff;
-  border-left: 6px solid var(--rojo);
+  border-left: 6px solid var(--azul);
   border-radius: 15px;
   padding: 18px 20px;
   margin-bottom: 18px;
@@ -1125,8 +1126,8 @@ html, body, #root{
 
 
 .cont-agradecimiento{
-  width: 100%;
-  min-height: 210px;
+  width: 350px;
+  min-height: 220px;
   background: var(--azul-texto);
   border-radius: 15px;
   padding: 18px 20px;
@@ -1165,6 +1166,7 @@ html, body, #root{
 .agradecimiento-text{
   color: var(--blanco);
 }
+
 
 /*Configuracion contactos*/
 .contacto-fondo{
