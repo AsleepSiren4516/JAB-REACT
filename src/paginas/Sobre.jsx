@@ -64,10 +64,15 @@ export default function Sobre() {
 
     <section className="py-5">
       <div className="container">
-        <div className="text-center mb-5 position-relative">
-          <h2 className="txt-titulo">Valores</h2>
-          <h3 className="general-text text-center">Principios que guían cada una de nuestras acciones</h3>
+
+        <div className="encabezado-valores text-center mb-5 position-relative">
+          <div className="frase-valores">
+            <span>Con el Corazón por Delante</span>
+          </div> 
+          <h2 className="txt-titulo mt-3">Valores</h2>
+          <h3 className="general-text mt-3 text-center">Principios que guían cada una de nuestras acciones</h3>
         </div>
+
         <br />
           <div className="valores-container">
 
