@@ -18,9 +18,21 @@
   --transAzulFuerte: rgba(15, 54, 69, 0.551);
 }
 
+/*Configuraciones generales*/
 /*Fondo*/
-html, body, #root{ 
-  background-color: var(--fondo);
+.fondo{
+  height: 490px;
+  background-size: 100%;
+  background-position: top center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.fondo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
 
 /*Configuracion barra de navegacion*/
@@ -398,13 +410,11 @@ html, body, #root{
 }
 
 /*Configuracion principal*/
-/* Sección contenedora */
 .metricas-section {
-  background-color: #FFF8F0; /* Crema de fondo general según el brief */
+  background-color: #FFF8F0; 
   width: 100%;
 }
 
-/* Distribución Bento Grid de la captura */
 .bento-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -412,11 +422,10 @@ html, body, #root{
   gap: 20px;
 }
 
-/* Comportamiento base de las tarjetas */
 .bento-card {
-  background-color: #F8F9FA; /* Gris claro de fondos de tarjetas secundarias */
+  background-color: #F8F9FA; 
   border: 1px solid #E2E8F0;
-  border-radius: 4px; /* Esquinas ligeramente suavizadas como la captura */
+  border-radius: 4px; 
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -482,27 +491,12 @@ html, body, #root{
 }
 
 .card-text {
-  font-family: 'Inter', 'Open Sans', sans-serif; /* Cuerpo de texto */
+  font-family: 'Inter', 'Open Sans', sans-serif; 
   font-size: 14px;
   color: #555555; 
   line-height: 1.5;
   margin: 0;
 }
-
-/* --- AJUSTES RESPONSIVOS (BREAKPOINTS DEL BRIEF) --- */
-
-/* Tablet (768px - 1199px) */
-@media (max-width: 1199px) {
-  .bento-grid {
-    grid-template-columns: repeat(2, 1fr); /* Pasa a 2 columnas */
-  }
-  .card-grande {
-    grid-column: auto;
-    grid-row: auto;
-    min-height: auto;
-  }
-}
-
 
 .seccion-layout {
   max-width: 1200px;
@@ -804,8 +798,8 @@ html, body, #root{
 .tarjeta {
   filter: drop-shadow(1px 2px 2px rgb(87, 87, 88));
   position: relative;
-  width: 400px;
-  height: 400px; 
+  width: 360px;
+  height: 360px; 
 }
 
 .tarjeta .cara {
@@ -847,41 +841,10 @@ html, body, #root{
   z-index: 2;
 }
 
-.relleno-rojo{
-  display:inline-block;
-  padding:8px 18px;
-  background:var(--amarillo);
-  color:var(--azul-texto);
-  border-radius:8px;
-  font-weight:700;
-}
-
 .encabezado-valores{
     text-align:center;
     margin-bottom:3rem;
 }
-
-.frase-valores{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:18px;
-    color:var(--rojo);
-    font-weight:600;
-    font-size:1rem;
-    letter-spacing:.08em;
-    text-transform:uppercase;
-}
-
-.frase-valores::before,
-.frase-valores::after{
-    content:"";
-    width:70px;
-    height:2px;
-    background:var(--amarillo);
-    border-radius:10px;
-}
-
 
 /* --- CARA ATRÁS--- */
 .tarjeta .atras {
@@ -900,22 +863,12 @@ html, body, #root{
   width: 100%;
 }
 
-.tarjeta .atras h5 {
-  color: var(--azul-intermedio);
-  font-size: 1.2rem;
-  font-weight: 800;
-  margin-bottom: 15px;
-  padding: 5px 15px;
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; 
-  border-bottom: none; 
-}
-
 .tarjeta .atras p {
   color: var(--azul-muy-oscuro);
   font-size: 0.95rem;
   line-height: 1.6;
   text-align: center;
-  margin: 0 auto;
+  margin: 20px 0 auto 0;
   max-width: 90%;
   flex-grow: 1;
   display: flex;
@@ -949,21 +902,33 @@ html, body, #root{
 .tarjeta:hover .frente { transform: rotateY(-180deg); }
 .tarjeta:hover .atras { transform: rotateY(0deg); }
 
-/*Configuracion de donar*/
+/* Configuración del Banner Donar */
 .donar {
-  height: 490px;
-  background-image: url("../assets/fondo-donar.jpg");
+  min-height: 490px;
   background-size: cover;
-  background-position: top center;
+  background-position: center center;
   background-repeat: no-repeat;
   position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
-.donar::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
+.donar {
+    overflow: hidden;
+}
+
+
+.donar::before{
+    content:"";
+    position:absolute;
+    right:-25%;
+    width:80%;
+    height:130%;
+    background:var(--transfondo);
+    border-radius:60%;
+    filter:blur(80px);
+    z-index:1;
 }
 
 .donar-contenedor {
@@ -971,13 +936,33 @@ html, body, #root{
   z-index: 2;
 }
 
-.donar-form{
-    min-height: 400px;
+/* Clases de apoyo para el Banner */
+.letter-spacing-1 {
+  letter-spacing: 1.5px;
+  font-size: 0.9rem;
 }
 
-.donar-info{
-    min-height: 400px;
-    transform: translateX(50px);
+.text-white-80 {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.text-primary-jab {
+  color: #103557 !important;
+}
+
+.hero-content{
+    padding-left: 70px;
+}
+
+
+/* Estilos de formulario e información */
+.donar-contenedor {
+  position: relative;
+  z-index: 2;
+}
+
+.donar-form {
+  min-height: 400px;
 }
 
 .donar-btn{
@@ -988,9 +973,19 @@ html, body, #root{
   color: var(--blanco);
   background-color: var(--azul);
   border: 20px;
+  transition: all 0.3s ease;
+}
+.donar-btn:hover{
+  background-color: var(--amarillo);
+  color: var(--azul-texto);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.donar-info {
+  min-height: 400px;
 }
 
-.donar-title{
+.donar-title {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   font-size: 2.3rem;
@@ -998,7 +993,7 @@ html, body, #root{
   margin-bottom: 0.5rem;  
 }
 
-.donar-subtitle{
+.donar-subtitle {
   font-family: 'Alef', sans-serif;
   font-weight: 500;
   font-size: 1.7rem;
@@ -1006,12 +1001,11 @@ html, body, #root{
   margin-bottom: 1.5rem;
 }
 
-.donar-datos-title{
+.donar-datos-title {
   color: var(--azul-texto);
-
 }
 
-.donar-datos{
+.donar-datos {
   background-color: var(--transAzul);
   margin: 0 auto;
   padding: 5px 0px;
@@ -1023,7 +1017,6 @@ html, body, #root{
   align-items: flex-start; 
   gap: 2px;
   width: 100%;
-  
 }
 
 .donar-input-wrapper {
@@ -1057,7 +1050,7 @@ html, body, #root{
 
 }
 
-.pago-seguro{
+.pago-seguro {
   align-self: center;
   position: relative;
   z-index: 2;
@@ -1067,10 +1060,9 @@ html, body, #root{
   text-align: justify;
 }
 
-.monto{
+.monto {
   color: #828282;
 }
-
 
 .montos-container{
     display:flex;
@@ -1110,22 +1102,20 @@ html, body, #root{
     background:#eef9ff;
 }
 
-.iconos{
+.iconos {
   width: 22px;
   height: 22px;
-  align-items: center;
-  justify-content: center;
-  
   color: #e43b5aff;
   font-size: 45px;
   margin-right: 15px;
 }
 
-.cartas-donacion{
-  width: 350px;
+.cartas-donacion {
+  width: 100%;
+  max-width: 350px;
   min-height: 140px;
   background: #fff;
-  border-left: 6px solid var(--azul);
+  border-left: 6px solid var(--amarillo);
   border-radius: 15px;
   padding: 18px 20px;
   margin-bottom: 18px;
@@ -1134,14 +1124,14 @@ html, body, #root{
   cursor: default;
 }
 
-.cartas-donacion:hover{
+.cartas-donacion:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 30px rgba(0,0,0,.15);
 }
 
-
-.cont-agradecimiento{
-  width: 350px;
+.cont-agradecimiento {
+  width: 100%;
+  max-width: 350px;
   min-height: 220px;
   background: var(--azul-texto);
   border-radius: 15px;
@@ -1152,12 +1142,12 @@ html, body, #root{
   cursor: default;
 }
 
-.cont-agradecimiento:hover{
+.cont-agradecimiento:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 30px rgba(0,0,0,.15);
 }
 
-.general-text{
+.general-text {
   position: relative;
   z-index: 2;
   font-size: 1.1rem;
@@ -1167,39 +1157,21 @@ html, body, #root{
   text-align: justify;
 }
 
-.agradecimiento-titulo{
+.agradecimiento-titulo {
   position: relative;
   z-index: 2;
   font-size: 1.1rem;
   line-height: 1.7;
   color: var(--amarillo);
   margin-top: 1rem;
-  text-align: justify;
   font-weight: 600;
 }
 
-.agradecimiento-text{
+.agradecimiento-text {
   color: var(--blanco);
 }
 
-
 /*Configuracion contactos*/
-.contacto-fondo{
-  height: 490px;
-  background-image: url("../assets/fondo-contacto.jpg");
-  background-size: 100%;
-  background-position: top center;
-  background-repeat: no-repeat;
-  position: relative;
-}
-
-.contacto-fondo::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-}
-
 .text-capacitacion{
   color: var(--rojo-texto);
 }
@@ -1245,41 +1217,248 @@ html, body, #root{
   margin: 0 auto;
 }
 
-/*configuracion servicios*/
-.services-fondo {
-  height: 490px;
-  background-image: url("../assets/fondo-services.jpg");
-  background-size: cover;
-  background-position: top center;
-  background-repeat: no-repeat;
+.carrusel-logos-paginado {
   position: relative;
+  padding: 0 25px 65px 25px;
 }
 
-.services-fondo::before {
-  content: "";
+.carrusel-logos-paginado .carousel-item {
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.logo-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.logo-circle-container {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 1px solid var(--amarillo);
+  background-color: var(--blanco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Otorga el efecto suave de resplandor y escalado */
+}
+
+.logo-circle-container .logo-img {
+  max-width: 50%;
+  max-height: 50%;
+  object-fit: contain;
+}
+
+.logo-caption {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #94a3b8;
+  transition: color 0.3s ease;
+}
+
+.logo-circle-container.activo {
+  border: 2px solid #1a9ecc;
+  box-shadow: 0 6px 18px rgba(26, 158, 204, 0.22);
+  transform: scale(1.1); 
+}
+
+.logo-caption.activo {
+  color: #1a9ecc;
+  font-weight: 700;
+}
+
+.carrusel-logos-paginado .carousel-control-prev,
+.carrusel-logos-paginado .carousel-control-next {
+  width: 42px;
+  height: 42px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 50%;
+  top: 38%;
+  opacity: 1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.carrusel-logos-paginado .carousel-control-prev {
+  left: -5px;
+}
+.carrusel-logos-paginado .carousel-control-next {
+  right: -5px;
+}
+
+.carrusel-logos-paginado .carousel-control-prev:hover,
+.carrusel-logos-paginado .carousel-control-next:hover {
+  background-color: #1a9ecc;
+  border-color: #1a9ecc;
+}
+
+/* Color azul de los iconos de flecha */
+.carrusel-logos-paginado .carousel-control-prev-icon,
+.carrusel-logos-paginado .carousel-control-next-icon {
+  filter: invert(53%) sepia(85%) saturate(1632%) hue-rotate(162deg) brightness(96%) contrast(89%);
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.carrusel-logos-paginado .carousel-control-prev:hover .carousel-control-prev-icon,
+.carrusel-logos-paginado .carousel-control-next:hover .carousel-control-next-icon {
+  filter: brightness(0) invert(1);
+}
+
+.carrusel-logos-paginado .carousel-indicators {
   position: absolute;
-  inset: 0;
-  z-index: 1;
+  bottom: 0px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-/*configuracion transparencia*/
-.transparencia-fondo {
-  height: 490px;
-  background-image: url("../assets/fondo-transparencia.jpg");
-  background-size: cover;
-  background-position: top center;
-  background-repeat: no-repeat;
-  position: relative;
+.carrusel-logos-paginado .carousel-indicators [data-bs-target] {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  margin: 0 5px;
+  opacity: 0.8;
+  transition: all 0.3s ease;
 }
 
-.transparencia-fondo::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
+.carrusel-logos-paginado .carousel-indicators .active {
+  transform: scale(1.25);
+  opacity: 1;
 }
 
+.section-title-avales {
+  color: #1a9ecc;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+/* Tarjeta de Aval */
+.aval-card {
+  background-color: #ffffff;
+  border: 1.5px solid #dbeae8;
+  border-radius: 16px;
+  padding: 30px 20px;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.aval-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.aval-icon-wrapper {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-color: #e6f6fc;
+  color: #1a9ecc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.aval-title {
+  color: #1e293b;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.aval-desc {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.aval-tag {
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.tag-blue {
+  background-color: #e0f2fe;
+  color: #0284c7;
+}
+
+.tag-light-blue {
+  background-color: #f0f9ff;
+  color: #0369a1;
+}
+
+.confiar-box {
+  background-color: var(--azul-texto);
+  border-radius: 16px;
+  padding: 35px 40px;
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(21, 46, 61, 0.15);
+}
+
+.confiar-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.confiar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.confiar-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  font-weight: 400!important;
+  color: #ffffff;
+}
+
+.check-icon {
+  color: var(--amarillo);
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Tablet (768px - 1199px) */
+@media (max-width: 1199px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr); /* Pasa a 2 columnas */
+  }
+  .card-grande {
+    grid-column: auto;
+    grid-row: auto;
+    min-height: auto;
+  }
+}
 
 /* Responsivo: en pantallas medianas y pequeñas */
 @media (max-width: 992px) {

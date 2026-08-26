@@ -5,11 +5,21 @@ import mariposa from "../assets/mariposa.svg";
 import mv from "../assets/collage.png";
 import tarjeta from "../assets/tarjetas.svg"
 import tarjeta2 from "../assets/tarjetas2.svg"
+import fondoSobre from "../assets/fondo-about.jpg";
 
 export default function Sobre() {
+  const lineaEstilo = {
+    backgroundColor: "#EA0029", 
+    height: "4px",               
+    width: "150px",              
+    display: "inline-block",     
+    flexShrink: 0,               
+    borderRadius: "2px"
+  };
+
   return (
     <>
-    <div className="about-fondo">    
+    <div className="fondo" style={{ backgroundImage: `url(${fondoSobre})` }}>    
       <div className="pt-5 px-5">
         <div className="container-titulos pt-5 px-5">
           <h1 className="head-title pt-5" style={{color: "#123448"}}>Sobre nosotros</h1>
@@ -64,13 +74,19 @@ export default function Sobre() {
 
     <section className="py-5">
       <div className="container">
-
-        <div className="encabezado-valores text-center mb-5 position-relative">
-          <div className="frase-valores">
-            <span>Con el Corazón por Delante</span>
-          </div> 
-          <h2 className="txt-titulo mt-3">Valores</h2>
-          <h3 className="general-text mt-3 text-center">Principios que guían cada una de nuestras acciones</h3>
+        <div className="text-center mb-4 position-relative">
+          <h2 className="txt-titulo mb-1">Valores</h2>
+          
+          <div className="d-flex align-items-center justify-content-center gap-3">
+            <span style={lineaEstilo}></span>
+            <span 
+              className="text-uppercase fw-semibold" 
+              style={{ color: "#4c5f68", letterSpacing: "1.5px", fontSize: "0.90rem" }}
+            >
+              LOS PRINCIPIOS QUE NOS GUÍAN
+            </span>
+            <span style={lineaEstilo}></span>
+          </div>
         </div>
 
         <br />

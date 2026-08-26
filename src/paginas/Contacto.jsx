@@ -1,9 +1,9 @@
 import {FaPhone, FaEnvelope } from "react-icons/fa";
-
+import fondoContacto from "../assets/fondo-contacto.jpg";
 export default function Contacto() {
   return (
     <>
-    <div className="contacto-fondo">    
+    <div className="fondo"style={{ backgroundImage: `url(${fondoContacto})` }}>    
       <div className="pt-5 px-5">
         <div className="container-titulos pt-5 px-5">
           <h1 className="head-title pt-5" style={{color: "#123448"}}>Contáctanos</h1>

@@ -2,6 +2,7 @@ import Carrusel from "../componentes/Carrusel";
 import FotoServ1_1 from "../assets/7CB7E6E4.jpg";
 import FotoServ1_2 from "../assets/7CB7E6E4.jpg";
 import FotoServ2_1 from "../assets/7CB7E6E4.jpg";
+import fondoServicios from "../assets/fondo-services.jpg";
 
 export default function Servicios() {
 
@@ -16,7 +17,7 @@ export default function Servicios() {
 
   return (
     <>
-      <div className="services-fondo">    
+      <div className="fondo" style={{ backgroundImage: `url(${fondoServicios})` }}>    
         <div className="pt-5 px-5">
           <div className="container-titulos pt-5 px-4">
             <h1 className="head-title pt-5" style={{color: "#123448"}}>Nuestros servicios</h1>

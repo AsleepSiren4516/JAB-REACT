@@ -2,14 +2,11 @@ import Carrusel from "../componentes/Carrusel";
 import ServiciosBloque from "../componentes/ServiciosBloque.jsx"
 import aboutImg from "../assets/niños.png";
 import logoCorazon from "../assets/corazon_logo.svg";
-
-// --- AGREGADO: Importación de imágenes para el carrusel ---
 import Slide1 from "../assets/carrusel1.jpg";
 import Slide2 from "../assets/carrusel2.jpg";
 
 export default function Principal() {
 
-  // --- AGREGADO: Definición de los datos que se mostrarán en la Home ---
   const slidesInicio = [
     { 
       src: Slide1, 
@@ -29,7 +26,6 @@ export default function Principal() {
 
   return (
     <>
-      {/* --- MODIFICADO: Ahora pasamos los items al carrusel --- */}
       <Carrusel items={slidesInicio} />
 
       <section className="seccion-layout">
@@ -62,7 +58,6 @@ export default function Principal() {
 
         </div>
       </section>
-
 
       <section className="seccion-layout py-0">
         <ServiciosBloque />
@@ -124,7 +119,6 @@ export default function Principal() {
         </div>
       </div>
     </section>
-
     </>
   );
 }

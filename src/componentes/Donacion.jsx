@@ -16,7 +16,6 @@ export default function Donacion() {
       <input type="hidden" name="business" value="7UR3QW4YYSDCQ" />
       <input type="hidden" name="currency_code" value="MXN" />
 
-      {/* Botones de monto */}
       <div className="montos-container">
         {montos.map((monto) => (
           <button
@@ -31,21 +30,8 @@ export default function Donacion() {
             <span>Pesos</span>
           </button>
         ))}
-
-        <button
-          type="button"
-          className={`monto-btn ${
-            cantidad !== "" && !montos.includes(Number(cantidad))
-              ? "activo"
-              : ""
-          }`}
-        >
-          <strong>Otro</strong>
-          <span>monto</span>
-        </button>
       </div>
 
-      {/* Input */}
       <div className="donar-input-wrapper">
         <span className="donar-currency">$</span>
 
