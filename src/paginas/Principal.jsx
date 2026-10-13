@@ -1,12 +1,24 @@
 import Carrusel from "../componentes/Carrusel";
-import ServiciosBloque from "../componentes/ServiciosBloque.jsx"
+import ServiciosBloque from "../componentes/ServiciosBloque.jsx";
 import aboutImg from "../assets/niños.png";
 import logoCorazon from "../assets/corazon_logo.svg";
 import Slide1 from "../assets/carrusel1.jpg";
 import Slide2 from "../assets/carrusel2.jpg";
+import familia from "../assets/Nota_familia.png";
+import empresas from "../assets/Nota_empresa.png";
+import voluntarios from "../assets/Nota_voluntarios.png";
+import niños from "../assets/Actividades_niños.jpg";
+import voluntario from "../assets/voluntarios.jpg";
 
 export default function Principal() {
-
+  const lineaEstilo = {
+    backgroundColor: "#EA0029", 
+    height: "4px",               
+    width: "150px",              
+    display: "inline-block",     
+    flexShrink: 0,               
+    borderRadius: "2px"
+  };
   const slidesInicio = [
     { 
       src: Slide1, 
@@ -57,68 +69,61 @@ export default function Principal() {
           </div>
 
         </div>
-      </section>
 
-      <section className="seccion-layout py-0">
-        <ServiciosBloque />
-      </section>
+      <ServiciosBloque />
 
       <section className="metricas-section py-5">
-      <div className="container">
-        <div className="bento-grid">
+                <div className="text-center mb-4 position-relative">
+          <h2 className="txt-titulo mb-1">Transparencia</h2>
           
-          <div className="bento-card card-grande">
-            <span className="card-tag">Children served</span>
-            <div className="card-main-content">
-              <h2 className="metric-number">8,500</h2>
-              <hr className="card-divider" />
-              <p className="card-text text-end">
-                Young lives supported through therapy and care
-              </p>
-            </div>
+          <div className="d-flex align-items-center justify-content-center gap-3">
+            <span style={lineaEstilo}></span>
+            <span 
+              className="text-uppercase fw-semibold" 
+              style={{ color: "#4c5f68", letterSpacing: "1.5px", fontSize: "0.90rem" }}
+            >
+              NUESTRO COMPROMISO CON LA COMUNIDAD
+            </span>
+            <span style={lineaEstilo}></span>
           </div>
 
-          <div className="bento-card card-foto">
-            <img 
-              src="/assets/comunidad-1.jpg" 
-              alt="Voluntarios JAB conversando" 
-              className="bento-img"
-            />
-          </div>
-
-          <div className="bento-card card-mediana">
-            <span className="card-tag">Active volunteers</span>
-            <div className="card-main-content">
-              <h2 className="metric-number">340</h2>
-              <hr className="card-divider" />
-              <p className="card-text text-end">
-                Dedicated professionals giving their time freely
-              </p>
-            </div>
-          </div>
-
-          <div className="bento-card card-mediana-abajo">
-            <span className="card-tag">Programs running</span>
-            <div className="card-main-content">
-              <h2 className="metric-number">12</h2>
-              <hr className="card-divider" />
-              <p className="card-text text-end">
-                Specialized interventions across multiple communities
-              </p>
-            </div>
-          </div>
-
-          <div className="bento-card card-foto">
-            <img 
-              src="/assets/comunidad-2.jpg" 
-              alt="Equipo JAB planeando actividades" 
-              className="bento-img"
-            />
-          </div>
-
+          <p className="general-text text-center mt-4">
+            Rendimos cuentas con hechos. Conoce el alcance de nuestras acciones y cómo, gracias al apoyo de nuestra comunidad, transformamos vidas día con día.
+          </p>
         </div>
-      </div>
-    </section>
+
+        <div className="container">
+          <div className="bento-grid">
+            
+            {/* 1. Nota grande izquierda */}
+            <div className="bento-card card-grande">
+              <img src={familia} alt="Familia JAB" className="bento-img" />
+            </div>
+
+            {/* 2. Foto centro arriba */}
+            <div className="bento-card card-foto-arriba card-foto-real">
+              <img src={niños} alt="Voluntarios JAB conversando" className="bento-img" />
+            </div>
+
+            {/* 3. Nota mediana centro abajo */}
+            <div className="bento-card card-mediana-abajo">
+              <img src={empresas} alt="Empresas aliadas JAB" className="bento-img" />
+            </div>
+
+            {/* 4. Nota rosa derecha arriba */}
+            <div className="bento-card card-derecha-1">
+              <img src={voluntarios} alt="Voluntarios JAB" className="bento-img" />
+            </div>
+
+            {/* 5. Foto derecha abajo */}
+            <div className="bento-card card-derecha-2 card-foto-real">
+              <img src={voluntario} alt="Equipo JAB planeando actividades" className="bento-img" />
+            </div>
+
+          </div>
+        </div>
+        </section>
+      </section>
     </>
   );
 }
